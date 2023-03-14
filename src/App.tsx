@@ -1,5 +1,11 @@
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { MainPage } from '@/pages';
 
 export const App: React.FC = () => {
-  return <div>asd</div>;
+  return (
+    <Routes>
+      <Route index element={<MainPage />} />
+    </Routes>
+  );
 };
