@@ -17,14 +17,12 @@ export const globalStyle = css`
   }
 
   html,
-  body,
-  #app,
-  #root,
-  #__next {
+  body {
     width: 100%;
     height: 100%;
     color: ${colors.white};
     background-color: ${colors.background};
+    font-family: Pretendard;
   }
 
   #app,
