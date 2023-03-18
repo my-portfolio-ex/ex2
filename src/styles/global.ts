@@ -21,7 +21,7 @@ export const globalStyle = css`
     width: 100%;
     height: 100%;
     color: ${colors.white};
-    background-color: ${colors.background};
+    background-color: #000000;
     font-family: Pretendard;
   }
 
