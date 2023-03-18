@@ -14,7 +14,6 @@ export const MainWrapper = styled.main<{ anyClick: boolean }>`
 export const LeftSection = styled.section<{ introduce: boolean; project: boolean }>`
   width: ${(props) => (props.introduce ? '100%' : props.project ? '0%' : '50%')};
   height: 100%;
-  transition: all 0.5s;
 
   :hover {
     ${(props) => (props.introduce ? 'none' : 'width: 70%')}
@@ -75,6 +74,7 @@ export const LeftSection = styled.section<{ introduce: boolean; project: boolean
     linear-gradient(#cdcccc, #f2f2f2);
   background-size: 100px 100%, 100% 100px, 100% 10px, 10px 100%, 100% 100px, 100px 100%, 100px 100%,
     100px 100px, 100px 100px;
+  transition: all 0.5s ease 0s;
 `;
 export const RightSection = styled.section<{ introduce: boolean; project: boolean }>`
   width: ${(props) => (props.project ? '100%' : props.introduce ? '0%' : '50%')};
@@ -91,7 +91,7 @@ export const RightSection = styled.section<{ introduce: boolean; project: boolea
   :hover {
     ${(props) => (props.project ? 'none' : 'width: 70%')}
   }
-  transition: all 0.5s;
+
   background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
     linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
     linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
@@ -108,23 +108,24 @@ export const RightSection = styled.section<{ introduce: boolean; project: boolea
     );
   background-color: #131313;
   background-size: 20px 20px;
+  transition: all 0.5s ease 0s;
 `;
 
 export const LeftTitle = styled.strong<{ introduce: boolean; project: boolean; clicked: boolean }>`
   color: #000000;
   font-size: 30px;
   font-weight: 800;
-  transition: all 1s;
   display: ${(props) => (props.project ? 'none' : 'flex')};
   ${(props) => (props.clicked ? 'transform: translate(0, -285px)' : '')};
   margin: auto 65px auto auto;
+  transition: all 1s;
 `;
 export const RightTitle = styled.strong<{ introduce: boolean; project: boolean; clicked: boolean }>`
   color: #f2f2f2;
   font-size: 30px;
   font-weight: 800;
-  transition: all 1s;
   display: ${(props) => (props.introduce ? 'none' : 'flex')};
   ${(props) => (props.clicked ? 'transform: translate(0, -285px)' : '')};
   margin: auto auto auto 65px;
+  transition: all 1s;
 `;
