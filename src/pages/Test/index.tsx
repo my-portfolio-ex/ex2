@@ -8,9 +8,10 @@ import Slider from 'react-slick';
 export const Test: React.FC = () => {
   const settings = {
     className: 'center',
-    touchMove: true,
+    focusOnSelect: true,
+    arrows: false,
     centerMode: true,
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
@@ -46,14 +47,6 @@ export const Test: React.FC = () => {
 
   return (
     <S.Container>
-      <S.h1>
-        Recent<S.green>Projects</S.green>
-      </S.h1>
-      <S.p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, quisquam. Officia facere
-        omnis blanditiis voluptas dicta mollitia atque veritatis modi reiciendis aperiam? Omnis
-        quae, voluptatibus qui iure dignissimos nulla adipisci?
-      </S.p>
       <S.Slide>
         <Slider {...settings}>
           {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((val, idx) => {

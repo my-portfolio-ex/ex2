@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const Container = styled.div`
-  width: 80%;
+  width: 90%;
   max-width: 1280px;
   margin: 0 auto;
   padding: 3rem 0;
@@ -33,9 +33,10 @@ export const Slide = styled.div``;
 export const SliderComp = styled.div``;
 
 export const ProjectContainer = styled.div`
-  height: 300px;
-  background: gray;
-  margin: 0 0.5rem;
+  width: 270px;
+  height: 270px;
+  background: #ffffff;
+  margin: auto;
   padding: 0 0.5rem;
   border-radius: 10px;
   cursor: pointer;

@@ -124,8 +124,11 @@ export const RightTitle = styled.strong<{ introduce: boolean; project: boolean; 
   color: #f2f2f2;
   font-size: 30px;
   font-weight: 800;
+  position: sticky;
   display: ${(props) => (props.introduce ? 'none' : 'flex')};
-  ${(props) => (props.clicked ? 'transform: translate(0, -285px)' : '')};
+  ${(props) => (props.clicked ? 'transform: translate(0, 1px)' : '')};
   margin: auto auto auto 65px;
   transition: all 1s;
 `;
+
+export const MainScroll = styled.div``;

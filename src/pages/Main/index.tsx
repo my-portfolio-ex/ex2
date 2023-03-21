@@ -1,6 +1,7 @@
 import React, { SyntheticEvent, useEffect, useState } from 'react';
 
 import * as S from './styled';
+import { Test } from '../Test';
 
 export const MainPage: React.FC = () => {
   const [introduce, setIntroduce] = useState(false);
@@ -28,6 +29,7 @@ export const MainPage: React.FC = () => {
         <S.RightTitle introduce={introduce} project={project} clicked={anyClick}>
           프로젝트
         </S.RightTitle>
+        <S.MainScroll>{project ? <Test /> : <></>}</S.MainScroll>
       </S.RightSection>
     </S.MainWrapper>
   );
