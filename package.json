@@ -23,9 +23,11 @@
     "@emotion/styled": "^11.10.6",
     "@types/jest": "^29.4.1",
     "@types/node": "^18.15.2",
+    "framer-motion": "^10.8.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.9.0",
+    "react-scroll-motion": "^0.3.2",
     "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1"
   },
