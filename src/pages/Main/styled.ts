@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { motion } from 'framer-motion';
 
 export const MainWrapper = styled.main<{ anyClick: boolean }>`
   width: 100%;
@@ -13,7 +14,6 @@ export const MainWrapper = styled.main<{ anyClick: boolean }>`
 
 export const LeftSection = styled.section<{ introduce: boolean; project: boolean }>`
   width: ${(props) => (props.introduce ? '100%' : props.project ? '0%' : '50%')};
-  height: 100%;
 
   :hover {
     ${(props) => (props.introduce ? 'none' : 'width: 70%')}
@@ -79,14 +79,13 @@ export const LeftSection = styled.section<{ introduce: boolean; project: boolean
 export const RightSection = styled.section<{ introduce: boolean; project: boolean }>`
   width: ${(props) => (props.project ? '100%' : props.introduce ? '0%' : '50%')};
 
-  height: 100%;
   display: flex;
   flex-direction: column;
-
   overflow-y: auto;
   ::-webkit-scrollbar {
     display: none;
   }
+  scroll-snap-type: y mandatory;
 
   :hover {
     ${(props) => (props.project ? 'none' : 'width: 70%')}
@@ -116,7 +115,6 @@ export const LeftTitle = styled.strong<{ introduce: boolean; project: boolean; c
   font-size: 30px;
   font-weight: 800;
   display: ${(props) => (props.project ? 'none' : 'flex')};
-  ${(props) => (props.clicked ? 'transform: translate(0, -285px)' : '')};
   margin: auto 65px auto auto;
   transition: all 1s;
 `;
@@ -124,11 +122,29 @@ export const RightTitle = styled.strong<{ introduce: boolean; project: boolean; 
   color: #f2f2f2;
   font-size: 30px;
   font-weight: 800;
-  position: sticky;
   display: ${(props) => (props.introduce ? 'none' : 'flex')};
-  ${(props) => (props.clicked ? 'transform: translate(0, 1px)' : '')};
   margin: auto auto auto 65px;
   transition: all 1s;
 `;
 
-export const MainScroll = styled.div``;
+export const ProjectDataSection = styled.section`
+  height: 100vh;
+  display: flex;
+  scroll-snap-align: center;
+`;
+
+export const ProjectDate = styled(motion.h2)`
+  margin: auto;
+  width: 15vw;
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: center;
+`;
+
+export const ProjectContainer = styled.div`
+  width: 85vw;
+  height: 100vh;
+  background: gray;
+`;
