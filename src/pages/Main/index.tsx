@@ -1,7 +1,6 @@
 import React, { SyntheticEvent, useEffect, useState } from 'react';
 
 import * as S from './styled';
-import { Test } from '../Test';
 
 export const MainPage: React.FC = () => {
   const [introduce, setIntroduce] = useState(false);
@@ -17,7 +16,7 @@ export const MainPage: React.FC = () => {
       setIntroduce(true);
     }
   };
-  console.log(introduce, project);
+
   return (
     <S.MainWrapper anyClick={anyClick}>
       <S.LeftSection introduce={introduce} project={project} onClick={SelectOnClick}>
@@ -26,10 +25,23 @@ export const MainPage: React.FC = () => {
         </S.LeftTitle>
       </S.LeftSection>
       <S.RightSection introduce={introduce} project={project} onClick={SelectOnClick}>
-        <S.RightTitle introduce={introduce} project={project} clicked={anyClick}>
-          프로젝트
-        </S.RightTitle>
-        <S.MainScroll>{project ? <Test /> : <></>}</S.MainScroll>
+        {anyClick ? (
+          <></>
+        ) : (
+          <S.RightTitle introduce={introduce} project={project} clicked={anyClick}>
+            프로젝트
+          </S.RightTitle>
+        )}
+        {project ? (
+          ['프로젝트', 1, 2, 3, 4, 5].map((val: string | number, idx: number) => (
+            <S.ProjectDataSection key={idx}>
+              <S.ProjectDate>{val}</S.ProjectDate>
+              <S.ProjectContainer></S.ProjectContainer>
+            </S.ProjectDataSection>
+          ))
+        ) : (
+          <></>
+        )}
       </S.RightSection>
     </S.MainWrapper>
   );
