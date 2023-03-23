@@ -14,7 +14,13 @@ export const MainWrapper = styled.main<{ anyClick: boolean }>`
 
 export const LeftSection = styled.section<{ introduce: boolean; project: boolean }>`
   width: ${(props) => (props.introduce ? '100%' : props.project ? '0%' : '50%')};
-
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  scroll-snap-type: y mandatory;
   :hover {
     ${(props) => (props.introduce ? 'none' : 'width: 70%')}
   }
@@ -143,8 +149,25 @@ export const ProjectDate = styled(motion.h2)`
   text-align: center;
 `;
 
-export const ProjectContainer = styled.div`
-  width: 85vw;
+export const ProjectContainer = styled.div<{ widthBool: boolean }>`
+  width: ${(props) => (props.widthBool ? '100vw' : '85vw')};
   height: 100vh;
-  background: gray;
+`;
+
+export const ProjectIntro = styled.div`
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+`;
+
+export const ProjectIntroDate = styled.div`
+  width: 100%;
+  text-align: center;
+
+  margin: auto;
+  font-size: 30px;
+  font-weight: bold;
+  color: #f2f2f2;
 `;
