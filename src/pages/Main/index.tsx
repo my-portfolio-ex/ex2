@@ -2,6 +2,7 @@ import React, { SyntheticEvent, useEffect, useState } from 'react';
 
 import * as S from './styled';
 import { useScrollFadeIn } from '@/hooks';
+import { useNavigate } from 'react-router';
 
 export const MainPage: React.FC = () => {
   const [introduce, setIntroduce] = useState(false);
@@ -12,10 +13,14 @@ export const MainPage: React.FC = () => {
     1: useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.2),
     2: useScrollFadeIn<HTMLHeadingElement>('up', 1.4, 1.5),
   };
+  const navigate = useNavigate();
   const SelectOnClick = (event: SyntheticEvent) => {
     setAnyClick(true);
     if (event.currentTarget.innerHTML.includes('프로젝트')) {
       setProject(true);
+      setTimeout(() => {
+        navigate('/project');
+      }, 500);
       setIntroduce(false);
     } else {
       setProject(false);
@@ -56,23 +61,7 @@ export const MainPage: React.FC = () => {
             프로젝트
           </S.RightTitle>
         )}
-        {project ? (
-          <>
-            <S.ProjectDataSection>
-              <S.ProjectContainer widthBool={true}>
-                <S.ProjectIntro>
-                  <S.ProjectIntroDate>2021 - 2023</S.ProjectIntroDate>
-                </S.ProjectIntro>
-              </S.ProjectContainer>
-            </S.ProjectDataSection>
-            <S.ProjectDataSection>
-              <S.ProjectDate>2</S.ProjectDate>
-              <S.ProjectContainer widthBool={false}>2022</S.ProjectContainer>
-            </S.ProjectDataSection>
-          </>
-        ) : (
-          <></>
-        )}
+        {project ? <></> : <></>}
       </S.RightSection>
     </S.MainWrapper>
   );
