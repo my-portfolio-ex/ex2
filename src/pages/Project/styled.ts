@@ -1,4 +1,13 @@
 import styled from '@emotion/styled';
+import { motion } from 'framer-motion';
+
+export const ProjcetWrapper = styled.main`
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  user-select: none;
+`;
 
 export const ProjectPageSection = styled.section`
   width: 100%;
@@ -28,4 +37,156 @@ export const ProjectPageSection = styled.section`
   background-color: #131313;
   background-size: 20px 20px;
   transition: all 0.5s ease 0s;
+`;
+
+export const ProjectDataSection = styled.section`
+  height: 100vh;
+  display: flex;
+  scroll-snap-align: center;
+  position: relative;
+`;
+
+export const ProjectDate = styled(motion.h2)`
+  width: 7vw;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: center;
+  position: absolute;
+  top: 35%;
+`;
+
+export const ProjectContainer = styled.div<{ widthBool: boolean }>`
+  width: 85vw;
+  height: ${(props) => (props.widthBool ? '100vh' : '200vh')};
+
+  margin: auto;
+  display: flex;
+  overflow-y: auto;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
+export const ProjectIntro = styled.div`
+  width: 100%;
+  height: 100%;
+
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const ProjectIntroName = styled.div`
+  width: 100%;
+  text-align: left;
+
+  font-size: 40px;
+  font-weight: bold;
+  color: #f2f2f2;
+  letter-spacing: 1px;
+
+  margin-top: auto;
+`;
+
+export const ProjectIntroTitle = styled.strong`
+  width: 100%;
+  text-align: left;
+
+  font-size: 40px;
+  font-weight: 400;
+  color: #f2f2f2;
+
+  margin-top: 3px;
+`;
+
+export const ProjectIntroDate = styled.div`
+  width: 100%;
+  text-align: left;
+
+  font-size: 20px;
+  font-weight: bold;
+  color: #f2f2f2;
+
+  margin-top: 10px;
+  margin-bottom: auto;
+`;
+
+export const TwoSection = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const ProjectTitle = styled.h1`
+  font-size: 30px;
+  font-weight: bold;
+
+  margin-top: 7rem;
+  text-align: center;
+  color: #f2f2f2;
+`;
+export const ProjectTextData = styled.div`
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+
+  margin: 10px auto 0 auto;
+`;
+
+export const ProjectDescHorizontal = styled.div`
+  font-size: 20px;
+  font-weight: 400;
+  color: #f2f2f2;
+
+  padding-right: 10px;
+`;
+
+export const ProjectDesc = styled.h2`
+  display: flex;
+  flex-direction: column;
+
+  font-size: 20px;
+  font-weight: 400;
+
+  margin-top: 2rem;
+  text-align: left;
+  color: #f2f2f2;
+`;
+
+export const ProjectTextInDesc = styled.div`
+  display: flex;
+  margin-top: 10px;
+`;
+
+export const ProjectDescTexts = styled.span`
+  font-size: 20px;
+  font-weight: 400;
+
+  margin-top: 0.5rem;
+  text-align: left;
+  color: #f2f2f2;
+`;
+
+export const EmptySpace = styled.div`
+  margin-top: 10px;
+  margin-bottom: 10px;
+`;
+
+export const ProjectFeatures = styled.h2`
+  display: flex;
+  flex-direction: column;
+
+  font-size: 20px;
+  font-weight: 400;
+
+  margin-top: 10rem;
+  text-align: left;
+  color: #f2f2f2;
+`;
+
+export const FeatureImg = styled.img`
+  width: 100%;
 `;
