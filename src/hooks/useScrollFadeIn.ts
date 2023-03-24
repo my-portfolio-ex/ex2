@@ -1,7 +1,7 @@
 import { useRef, useCallback, useEffect } from 'react';
 
 export const DIRECTION_VALUES = ['up', 'down', 'left', 'right'] as const;
-export type DirectionType = typeof DIRECTION_VALUES[number];
+export type DirectionType = (typeof DIRECTION_VALUES)[number];
 
 export const useScrollFadeIn = <T extends HTMLElement>(
   direction: DirectionType = 'up',
@@ -32,8 +32,7 @@ export const useScrollFadeIn = <T extends HTMLElement>(
       if (entry.isIntersecting) {
         ref.current.style.transitionProperty = 'opacity transform';
         ref.current.style.transitionDuration = `${duration}s`;
-        ref.current.style.transitionTimingFunction =
-          'cubic-bezier(0, 0, 0.2, 1)';
+        ref.current.style.transitionTimingFunction = 'cubic-bezier(0, 0, 0.2, 1)';
         ref.current.style.transitionDelay = `${delay}s`;
         ref.current.style.opacity = '1';
         ref.current.style.transform = 'translate3d(0, 0, 0)';
