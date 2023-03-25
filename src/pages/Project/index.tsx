@@ -4,6 +4,9 @@ import * as S from './styled';
 
 import { useScrollFadeIn, useSeo } from '@/hooks';
 
+import SPDesktopIcon from '@/assets/image.png';
+import SPResponsive from '@/assets/image2.png';
+
 export const ProjectPage: React.FC = () => {
   const scrollanimation = {
     0: useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.5),
@@ -15,7 +18,9 @@ export const ProjectPage: React.FC = () => {
     6: useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.5),
     7: useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.9),
     8: useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.8),
-    9: useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.8),
+    9: useScrollFadeIn<HTMLHeadingElement>('down', 1, 0.8),
+    10: useScrollFadeIn<HTMLHeadingElement>('down', 1, 3.5),
+    11: useScrollFadeIn<HTMLHeadingElement>('down', 1, 3.5),
   };
   useSeo('박준희 | 프로젝트');
   return (
@@ -60,7 +65,7 @@ export const ProjectPage: React.FC = () => {
                       <S.ProjectDescHorizontal>-</S.ProjectDescHorizontal>
                       처음 시도해본 프로젝트로 많은 시간이 들었고 개발을 하면서 욕심이 생겨 여러
                       기능들을 추가하며 <br />
-                      여러 hook과 typescript를 배웠다.
+                      여러 hook과 typescript를 배움
                     </S.ProjectTextInDesc>
                   </S.ProjectDescTexts>
                 </S.ProjectDesc>
@@ -72,6 +77,16 @@ export const ProjectPage: React.FC = () => {
                       메인화면
                     </S.ProjectTextInDesc>
                   </S.ProjectDescTexts>
+                  <S.ProjectImgContainer>
+                    <S.DesktopImgContainer {...scrollanimation[10]} widthValue="80%">
+                      <S.ProjectImgDesc>데스크탑</S.ProjectImgDesc>
+                      <S.FeatureImg src={SPDesktopIcon} />
+                    </S.DesktopImgContainer>
+                    <S.ResponsiveImgContainer {...scrollanimation[11]} widthValue="18%">
+                      <S.ProjectImgDesc>모바일</S.ProjectImgDesc>
+                      <S.FeatureImg src={SPResponsive} />
+                    </S.ResponsiveImgContainer>
+                  </S.ProjectImgContainer>
                 </S.ProjectFeatures>
               </S.ProjectTextData>
             </S.TwoSection>

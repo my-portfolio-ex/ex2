@@ -19,7 +19,6 @@ export const ProjectPageSection = styled.section`
     display: none;
   }
   scroll-snap-type: y mandatory;
-
   background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
     linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
     linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
@@ -133,7 +132,7 @@ export const ProjectTextData = styled.div`
   display: flex;
   flex-direction: column;
 
-  margin: 10px auto 0 auto;
+  margin: 40px auto 0 auto;
 `;
 
 export const ProjectDescHorizontal = styled.div`
@@ -158,7 +157,7 @@ export const ProjectDesc = styled.h2`
 
 export const ProjectTextInDesc = styled.div`
   display: flex;
-  margin-top: 10px;
+  margin-top: 5px;
 `;
 
 export const ProjectDescTexts = styled.span`
@@ -175,6 +174,7 @@ export const EmptySpace = styled.div`
   margin-bottom: 10px;
 `;
 
+//features
 export const ProjectFeatures = styled.h2`
   display: flex;
   flex-direction: column;
@@ -182,11 +182,31 @@ export const ProjectFeatures = styled.h2`
   font-size: 20px;
   font-weight: 400;
 
-  margin-top: 10rem;
+  margin-top: 15rem;
   text-align: left;
   color: #f2f2f2;
 `;
 
 export const FeatureImg = styled.img`
   width: 100%;
+`;
+
+export const ProjectImgContainer = styled.div`
+  width: 100%;
+
+  display: flex;
+`;
+export const DesktopImgContainer = styled.div<{ widthValue: string }>`
+  width: ${(props) => props.widthValue};
+`;
+export const ResponsiveImgContainer = styled.div<{ widthValue: string }>`
+  width: ${(props) => props.widthValue};
+  margin-left: 2%;
+`;
+export const ProjectImgDesc = styled.h3`
+  width: 100%;
+  text-align: center;
+
+  font-size: 15px;
+  font-weight: 600;
 `;
