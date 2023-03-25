@@ -1,7 +1,7 @@
 import React, { SyntheticEvent, useEffect, useState } from 'react';
 
 import * as S from './styled';
-import { useScrollFadeIn } from '@/hooks';
+import { useScrollFadeIn, useSeo } from '@/hooks';
 import { useNavigate } from 'react-router';
 
 export const MainPage: React.FC = () => {
@@ -27,7 +27,7 @@ export const MainPage: React.FC = () => {
       setIntroduce(true);
     }
   };
-
+  useSeo('fe junior dev | 박준희');
   return (
     <S.MainWrapper anyClick={anyClick}>
       <S.LeftSection

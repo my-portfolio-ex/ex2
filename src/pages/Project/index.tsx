@@ -2,7 +2,7 @@ import React from 'react';
 
 import * as S from './styled';
 
-import { useScrollFadeIn } from '@/hooks';
+import { useScrollFadeIn, useSeo } from '@/hooks';
 
 export const ProjectPage: React.FC = () => {
   const scrollanimation = {
@@ -17,6 +17,7 @@ export const ProjectPage: React.FC = () => {
     8: useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.8),
     9: useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.8),
   };
+  useSeo('박준희 | 프로젝트');
   return (
     <S.ProjcetWrapper>
       <S.ProjectPageSection>
