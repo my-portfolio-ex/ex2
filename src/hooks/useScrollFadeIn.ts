@@ -44,7 +44,7 @@ export const useScrollFadeIn = <T extends HTMLElement>(
   useEffect(() => {
     if (!ref.current) return;
 
-    const observer = new IntersectionObserver(handleScroll, { threshold: 0.8 });
+    const observer = new IntersectionObserver(handleScroll, { threshold: 0.1 });
     observer.observe(ref.current);
     return () => observer.disconnect();
   }, [handleScroll]);
