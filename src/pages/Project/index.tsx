@@ -4,28 +4,28 @@ import * as S from './styled';
 
 import { useScrollFadeIn, useSeo } from '@/hooks';
 
-import SPDesktopIcon from '@/assets/image.png';
-import SPResponsive from '@/assets/image2.png';
-import SPLoginDeskImg from '@/assets/loginDesk.png';
-import SPLoginResponsive from '@/assets/responsiveLogin.png';
-import SPRegisterDeskImg from '@/assets/registerDesk.png';
-import SPRegisterResponsive from '@/assets/responsiveRegister.png';
-import SPAfterLogin from '@/assets/afterLogin.png';
-import SPAfterResponsive from '@/assets/AfterLoginResponsive.png';
-import today from '@/assets/todaytimes.png';
-import habit from '@/assets/habits.png';
-import goals from '@/assets/golas.png';
-import myplan from '@/assets/myPlans.png';
-import profile from '@/assets/Profile.png';
-import bar from '@/assets/bar.png';
-import line from '@/assets/line.png';
-import donuts from '@/assets/donuts.png';
+import SPDesktopIcon from '../../assets/image.png';
+import SPResponsive from '../../assets/image2.png';
+import SPLoginDeskImg from '../../assets/loginDesk.png';
+import SPLoginResponsive from '../../assets/responsiveLogin.png';
+import SPRegisterDeskImg from '../../assets/registerDesk.png';
+import SPRegisterResponsive from '../../assets/responsiveRegister.png';
+import SPAfterLogin from '../../assets/afterLogin.png';
+import SPAfterResponsive from '../../assets/AfterLoginResponsive.png';
+import today from '../../assets/todaytimes.png';
+import habit from '../../assets/habits.png';
+import goals from '../../assets/golas.png';
+import myplan from '../../assets/myPlans.png';
+import profile from '../../assets/Profile.png';
+import bar from '../../assets/bar.png';
+import line from '../../assets/line.png';
+import donuts from '../../assets/donuts.png';
 
-import TeaLogin from '@/assets/TeacherLogin.png';
-import TeaLoginRes from '@/assets/TeacherLoginRes.png';
-import TeaAfterLogin from '@/assets/TeaAfterLogin.png';
-import TeaAfterLoginRes from '@/assets/TeaAfterLoginRes.png';
-import management from '@/assets/management.png';
+import TeaLogin from '../../assets/TeacherLogin.png';
+import TeaLoginRes from '../../assets/TeacherLoginRes.png';
+import TeaAfterLogin from '../../assets/TeaAfterLogin.png';
+import TeaAfterLoginRes from '../../assets/TeaAfterLoginRes.png';
+import management from '../../assets/management.png';
 import { MouseDown } from '@components/MouseDown';
 
 export const ProjectPage: React.FC = () => {
