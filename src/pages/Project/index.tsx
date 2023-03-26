@@ -4,28 +4,6 @@ import * as S from './styled';
 
 import { useScrollFadeIn, useSeo } from '@/hooks';
 
-import SPDesktopIcon from '../../assets/image.png';
-import SPResponsive from '../../assets/image2.png';
-import SPLoginDeskImg from '../../assets/loginDesk.png';
-import SPLoginResponsive from '../../assets/responsiveLogin.png';
-import SPRegisterDeskImg from '../../assets/registerDesk.png';
-import SPRegisterResponsive from '../../assets/responsiveRegister.png';
-import SPAfterLogin from '../../assets/afterLogin.png';
-import SPAfterResponsive from '../../assets/AfterLoginResponsive.png';
-import today from '../../assets/todaytimes.png';
-import habit from '../../assets/habits.png';
-import goals from '../../assets/golas.png';
-import myplan from '../../assets/myPlans.png';
-import profile from '../../assets/Profile.png';
-import bar from '../../assets/bar.png';
-import line from '../../assets/line.png';
-import donuts from '../../assets/donuts.png';
-
-import TeaLogin from '../../assets/TeacherLogin.png';
-import TeaLoginRes from '../../assets/TeacherLoginRes.png';
-import TeaAfterLogin from '../../assets/TeaAfterLogin.png';
-import TeaAfterLoginRes from '../../assets/TeaAfterLoginRes.png';
-import management from '../../assets/management.png';
 import { MouseDown } from '@components/MouseDown';
 
 export const ProjectPage: React.FC = () => {
@@ -49,61 +27,66 @@ export const ProjectPage: React.FC = () => {
   };
   useSeo('박준희 | 프로젝트');
   const dataArr = [
-    { FeatTitle: '메인화면', ImgSrcDesk: SPDesktopIcon, Responsive: SPResponsive, scrollNum: 9 },
+    {
+      FeatTitle: '메인화면',
+      ImgSrcDesk: 'https://i.ibb.co/Sddg95V/image.png',
+      Responsive: 'https://i.ibb.co/VWvvSRc/image2.png',
+      scrollNum: 9,
+    },
     {
       FeatTitle: '로그인',
-      ImgSrcDesk: SPLoginDeskImg,
-      Responsive: SPLoginResponsive,
+      ImgSrcDesk: 'https://i.ibb.co/kGyKxkM/login-Desk.png',
+      Responsive: 'https://i.ibb.co/6b273b4/responsive-Login.png',
       scrollNum: 10,
     },
     {
       FeatTitle: '회원가입',
-      ImgSrcDesk: SPRegisterDeskImg,
-      Responsive: SPRegisterResponsive,
+      ImgSrcDesk: 'https://i.ibb.co/mJ8QdkR/register-Desk.png',
+      Responsive: 'https://i.ibb.co/3BcVPPV/responsive-Register.png',
       scrollNum: 11,
     },
     {
       FeatTitle: '로그인 후 메인',
-      ImgSrcDesk: SPAfterLogin,
-      Responsive: SPAfterResponsive,
+      ImgSrcDesk: 'https://i.ibb.co/LkSbnh4/afterlogin.png',
+      Responsive: 'https://i.ibb.co/dQJHZgr/After-Login-Responsive.png',
       scrollNum: 12,
     },
     {
       FeatTitle: '시간 제출',
-      Responsive: today,
-      Responsive2: habit,
-      Responsive3: goals,
+      Responsive: 'https://i.ibb.co/yRp44B2/todaytimes.png',
+      Responsive2: 'https://i.ibb.co/NtZBzcT/habits.png',
+      Responsive3: 'https://i.ibb.co/kcpP2KL/golas.png',
     },
     {
       FeatTitle: '제출 데이터 확인 및 프로필',
-      Responsive: myplan,
-      Responsive2: profile,
+      Responsive: 'https://i.ibb.co/r3tkrG6/myPlans.png',
+      Responsive2: 'https://i.ibb.co/KjDD0wC/Profile.png',
     },
     {
       FeatTitle: '과목별 바 그래프의 시간 데이터',
-      ImgSrcDesk: bar,
+      ImgSrcDesk: 'https://i.ibb.co/6F7HKVS/bar.png',
     },
     {
       FeatTitle: '습관시간 선 형태의 그래프 데이터',
-      ImgSrcDesk: line,
+      ImgSrcDesk: 'https://i.ibb.co/1TGsDP3/line.png',
     },
     {
       FeatTitle: '목표 원 그래프의 시간 데이터',
-      ImgSrcDesk: donuts,
+      ImgSrcDesk: 'https://i.ibb.co/9G9yjmf/donuts.png',
     },
     {
       FeatTitle: '시간 관리 선생님 로그인',
-      ImgSrcDesk: TeaLogin,
-      Responsive: TeaLoginRes,
+      ImgSrcDesk: 'https://i.ibb.co/B6P87x5/Teacher-Login.png',
+      Responsive: 'https://i.ibb.co/PCYGcw8/Teacher-Login-Res.png',
     },
     {
       FeatTitle: '선생님 로그인 후 메인',
-      ImgSrcDesk: TeaAfterLogin,
-      Responsive: TeaAfterLoginRes,
+      ImgSrcDesk: 'https://i.ibb.co/ZznbrPy/Tea-After-Login.png',
+      Responsive: 'https://i.ibb.co/VxRZ935/Tea-After-Login-Res.png',
     },
     {
       FeatTitle: '전체 학생 데이터를 확인할 수 있는 관리자 페이지',
-      ImgSrcDesk: management,
+      ImgSrcDesk: 'https://i.ibb.co/Kqf82BN/management.png',
     },
   ];
   return (
