@@ -1,8 +1,7 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const ScrollDown = styled.div`
   margin: auto;
-  top: 30vw;
   --color: white;
   --sizeX: 30px;
   --sizeY: 50px;
@@ -15,7 +14,7 @@ export const ScrollDown = styled.div`
   box-sizing: border-box;
   margin-bottom: 16px;
   :before {
-    content: "";
+    content: '';
     position: absolute;
     bottom: 30px;
     left: 50%;
