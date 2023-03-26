@@ -24,10 +24,13 @@ export const MainPage: React.FC = () => {
       setIntroduce(false);
     } else {
       setProject(false);
+      setTimeout(() => {
+        navigate('/introduce');
+      }, 500);
       setIntroduce(true);
     }
   };
-  useSeo('fe junior dev | 박준희');
+  useSeo('박준희 | FE Junior 포트폴리오');
   return (
     <S.MainWrapper anyClick={anyClick}>
       <S.LeftSection
@@ -35,14 +38,18 @@ export const MainPage: React.FC = () => {
         project={project}
         onClick={introduce ? () => console.log(false) : SelectOnClick}
       >
-        <S.LeftTitle
-          {...scrollAnimated[1]}
-          introduce={introduce}
-          project={project}
-          clicked={anyClick}
-        >
-          소개
-        </S.LeftTitle>
+        {anyClick ? (
+          <></>
+        ) : (
+          <S.LeftTitle
+            {...scrollAnimated[1]}
+            introduce={introduce}
+            project={project}
+            clicked={anyClick}
+          >
+            소개
+          </S.LeftTitle>
+        )}
       </S.LeftSection>
       <S.RightSection
         introduce={introduce}
