@@ -56,6 +56,18 @@ export const ProjectDate = styled(motion.h2)`
   top: 35%;
 `;
 
+export const MouseDownPosition = styled.div`
+  width: 7vw;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: center;
+  position: absolute;
+  top: 80%;
+  right: 50%;
+`;
+
 export const ProjectContainer = styled.div<{ widthBool: boolean }>`
   width: 85vw;
   height: ${(props) => (props.widthBool ? '100vh' : '200vh')};
@@ -112,7 +124,14 @@ export const ProjectIntroDate = styled.div`
   margin-bottom: auto;
 `;
 
+//section
 export const TwoSection = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+`;
+export const ThreeSection = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
@@ -148,7 +167,7 @@ export const ProjectDesc = styled.h2`
   flex-direction: column;
 
   font-size: 20px;
-  font-weight: 400;
+  font-weight: bold;
 
   margin-top: 2rem;
   text-align: left;
@@ -157,14 +176,21 @@ export const ProjectDesc = styled.h2`
 
 export const ProjectTextInDesc = styled.div`
   display: flex;
+  flex-direction: column;
+
   margin-top: 5px;
+`;
+
+export const ProjectTextInDescContainer = styled.div`
+  display: flex;
+  line-height: 1.3em;
 `;
 
 export const ProjectDescTexts = styled.span`
   font-size: 20px;
   font-weight: 400;
 
-  margin-top: 0.5rem;
+  margin-top: 5rem;
   text-align: left;
   color: #f2f2f2;
 `;
@@ -180,15 +206,17 @@ export const ProjectFeatures = styled.h2`
   flex-direction: column;
 
   font-size: 20px;
-  font-weight: 400;
+  font-weight: bold;
 
-  margin-top: 15rem;
+  margin-top: 10rem;
   text-align: left;
   color: #f2f2f2;
 `;
 
 export const FeatureImg = styled.img`
   width: 100%;
+
+  border-radius: 10px;
 `;
 
 export const ProjectImgContainer = styled.div`
@@ -198,15 +226,34 @@ export const ProjectImgContainer = styled.div`
 `;
 export const DesktopImgContainer = styled.div<{ widthValue: string }>`
   width: ${(props) => props.widthValue};
+  margin: auto;
 `;
 export const ResponsiveImgContainer = styled.div<{ widthValue: string }>`
   width: ${(props) => props.widthValue};
   margin-left: 2%;
 `;
+
+export const ResImgContainer = styled.div`
+  display: flex;
+`;
+
 export const ProjectImgDesc = styled.h3`
   width: 100%;
   text-align: center;
 
   font-size: 15px;
-  font-weight: 600;
+  font-weight: bold;
+`;
+
+export const ProjectFeeling = styled.h2`
+  display: flex;
+  flex-direction: column;
+
+  font-size: 20px;
+  font-weight: bold;
+
+  margin-top: 4rem;
+  margin-bottom: 20rem;
+  text-align: left;
+  color: #f2f2f2;
 `;
