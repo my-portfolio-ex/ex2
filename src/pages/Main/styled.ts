@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { motion } from 'framer-motion';
 
 export const MainWrapper = styled.main<{ anyClick: boolean }>`
   width: 100%;

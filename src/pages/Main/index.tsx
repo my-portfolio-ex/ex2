@@ -30,7 +30,6 @@ export const MainPage: React.FC = () => {
       setIntroduce(true);
     }
   };
-  useSeo('박준희 | FE Junior 포트폴리오');
   return (
     <S.MainWrapper anyClick={anyClick}>
       <S.LeftSection
