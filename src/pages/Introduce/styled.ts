@@ -90,7 +90,7 @@ export const IntroduceContainer = styled.div<{ widthBool: boolean }>`
 
   margin: auto;
   display: flex;
-  overflow-y: auto;
+  flex-direction: column;
   ::-webkit-scrollbar {
     display: none;
   }
@@ -132,11 +132,122 @@ export const IntroduceIntroTitle = styled.strong`
 export const IntroduceContent = styled.h2`
   width: 7vw;
   color: #000000;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
   letter-spacing: 1px;
   text-align: center;
   position: absolute;
-  top: 48%;
+  top: 48.4%;
   right: 6.5%;
+`;
+
+export const simpleContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 20%;
+`;
+
+export const simpleTextContainer = styled.div`
+  display: flex;
+`;
+
+export const simpleIntroduceTitle = styled.div`
+  font-size: 30px;
+  font-weight: 400;
+  text-align: left;
+  color: #000000;
+`;
+
+export const simpleIntroduce = styled.strong`
+  font-size: 30px;
+  font-weight: bold;
+  text-align: left;
+  color: #000000;
+
+  margin-left: 10px;
+`;
+
+//grow up procedure
+export const growupPre = styled.div`
+  width: 85%;
+  overflow-x: scroll;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  display: flex;
+  flex-direction: column;
+  margin: auto 0 auto 0;
+`;
+
+export const EventBox = styled.div<{ marginValue: string }>`
+  display: flex;
+  height: 50px;
+  background: #1f1f1f;
+  border-radius: 10px;
+  border: 2px solid rgb(255 255 255);
+
+  margin-left: ${(props) => props.marginValue};
+`;
+
+export const horizontalLine = styled.div`
+  width: 4000px;
+  height: 3px;
+  background: #2c2c2c;
+  border-radius: 5px;
+
+  margin-top: 20px;
+  position: relative;
+`;
+
+export const horizontalPoint = styled.div`
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  left: 89px;
+  background: #2c2c2c;
+  top: -4px;
+  border-radius: 1px 0 10px 0;
+  transform: rotate(45deg);
+`;
+
+export const EventBoxText = styled.strong`
+  font-size: 20px;
+  font-weight: 300;
+  text-align: center;
+  color: #e0e0e0;
+  margin: auto 10px auto 10px;
+`;
+
+export const EventBoxDateContainer = styled.div`
+  margin-left: 56px;
+  margin-top: 10px;
+  display: flex;
+`;
+
+export const EventBoxDate = styled.div<{ marginValue: string }>`
+  font-size: 15px;
+  font-weight: 400;
+  text-align: center;
+
+  margin-left: ${(props) => props.marginValue};
+`;
+
+export const EventBoxContainer = styled.div`
+  display: flex;
+  width: 4000px;
+`;
+
+export const horizontalPointContainer = styled.div`
+  display: flex;
+`;
+
+export const SeeTip = styled.strong`
+  font-size: 20px;
+  font-weight: 500;
+
+  left: 33%;
+  top: 20%;
+  position: absolute;
 `;
