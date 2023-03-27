@@ -143,78 +143,77 @@ export const ProjectPage: React.FC = () => {
                     </S.ProjectTextInDesc>
                   </S.ProjectDescTexts>
                 </S.ProjectDesc>
-                <S.ProjectFeatures>
-                  FEATURES
-                  {dataArr.map((val, idx) => {
-                    return (
-                      <div key={idx} style={{ marginTop: '5rem' }}>
-                        <S.ProjectDescTexts>
-                          <S.ProjectTextInDesc>
-                            <S.ProjectTextInDescContainer>
-                              <S.ProjectDescHorizontal>-</S.ProjectDescHorizontal>
-                              {val.FeatTitle}
-                            </S.ProjectTextInDescContainer>
-                          </S.ProjectTextInDesc>
-                        </S.ProjectDescTexts>
-                        <S.ProjectImgContainer {...scrollanimation[val.scrollNum]}>
-                          {val.ImgSrcDesk ? (
-                            <S.DesktopImgContainer widthValue="80%">
-                              <S.ProjectImgDesc>데스크탑</S.ProjectImgDesc>
-                              <S.FeatureImg src={val.ImgSrcDesk} />
-                            </S.DesktopImgContainer>
-                          ) : (
-                            <></>
-                          )}
-                          {val.Responsive ? (
-                            <S.ResponsiveImgContainer widthValue="18%">
-                              <S.ProjectImgDesc>모바일</S.ProjectImgDesc>
-                              <S.ResImgContainer>
-                                <S.FeatureImg src={val.Responsive} />
-                                {val.Responsive2 || val.Responsive3 ? (
-                                  <>
-                                    <S.FeatureImg
-                                      style={{ marginLeft: '2rem' }}
-                                      src={val.Responsive2}
-                                    />
-                                    <S.FeatureImg
-                                      style={{ marginLeft: '2rem' }}
-                                      src={val.Responsive3}
-                                    />
-                                  </>
-                                ) : (
-                                  <></>
-                                )}
-                              </S.ResImgContainer>
-                            </S.ResponsiveImgContainer>
-                          ) : (
-                            <></>
-                          )}
-                        </S.ProjectImgContainer>
-                      </div>
-                    );
-                  })}
-                  <S.ProjectFeeling>
-                    느낀 점
-                    <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
-                      <S.ProjectTextInDesc>
-                        <S.ProjectTextInDescContainer>
-                          <S.ProjectDescHorizontal>-</S.ProjectDescHorizontal>
-                          처음 시작해본 프로젝트였기 때문에 알아볼 것도 많았고 부족한 점도 많았다.{' '}
-                          <br /> 하지만 버그가 생겼을 때 구글링하고 해결한 뒤 방법을 기록하게
-                          되었다.
-                        </S.ProjectTextInDescContainer>
-                        <S.EmptySpace />
+                <S.ProjectFeatures>FEATURES</S.ProjectFeatures>
+                {dataArr.map((val, idx) => {
+                  return (
+                    <div key={idx} style={{ marginTop: '5rem' }}>
+                      <S.ProjectDescTexts>
+                        <S.ProjectTextInDesc>
+                          <S.ProjectTextInDescContainer>
+                            <S.ProjectDescHorizontal>-</S.ProjectDescHorizontal>
+                            {val.FeatTitle}
+                          </S.ProjectTextInDescContainer>
+                        </S.ProjectTextInDesc>
+                      </S.ProjectDescTexts>
+                      <S.ProjectImgContainer {...scrollanimation[val.scrollNum]}>
+                        {val.ImgSrcDesk ? (
+                          <S.DesktopImgContainer widthValue="80%">
+                            <S.ProjectImgDesc>데스크탑</S.ProjectImgDesc>
+                            <S.FeatureImg alt="skyplanner 프로젝트 이미지" src={val.ImgSrcDesk} />
+                          </S.DesktopImgContainer>
+                        ) : (
+                          <></>
+                        )}
+                        {val.Responsive ? (
+                          <S.ResponsiveImgContainer widthValue="18%">
+                            <S.ProjectImgDesc>모바일</S.ProjectImgDesc>
+                            <S.ResImgContainer>
+                              <S.FeatureImg src={val.Responsive} alt="모바일 버전 이미지" />
+                              {val.Responsive2 || val.Responsive3 ? (
+                                <>
+                                  <S.FeatureImg
+                                    style={{ marginLeft: '2rem' }}
+                                    src={val.Responsive2}
+                                    alt="모바일 버전 이미지"
+                                  />
+                                  <S.FeatureImg
+                                    style={{ marginLeft: '2rem' }}
+                                    src={val.Responsive3}
+                                    alt="모바일 버전 이미지"
+                                  />
+                                </>
+                              ) : (
+                                <></>
+                              )}
+                            </S.ResImgContainer>
+                          </S.ResponsiveImgContainer>
+                        ) : (
+                          <></>
+                        )}
+                      </S.ProjectImgContainer>
+                    </div>
+                  );
+                })}
+                <S.ProjectFeeling>
+                  느낀 점
+                  <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
+                    <S.ProjectTextInDesc>
+                      <S.ProjectTextInDescContainer>
+                        <S.ProjectDescHorizontal>-</S.ProjectDescHorizontal>
+                        처음 시작해본 프로젝트였기 때문에 알아볼 것도 많았고 부족한 점도 많았다.{' '}
+                        <br /> 하지만 버그가 생겼을 때 구글링하고 해결한 뒤 방법을 기록하게 되었다.
+                      </S.ProjectTextInDescContainer>
+                      <S.EmptySpace />
 
-                        <S.ProjectTextInDescContainer>
-                          <S.ProjectDescHorizontal>-</S.ProjectDescHorizontal>
-                          완벽하게 구현하지 못한 management가 아쉬웠고 프로젝트 기간이 늘어가는 것을{' '}
-                          <br />
-                          줄이려면 구조를 먼저 설계해야 한다고 느꼇다.
-                        </S.ProjectTextInDescContainer>
-                      </S.ProjectTextInDesc>
-                    </S.ProjectDescTexts>
-                  </S.ProjectFeeling>
-                </S.ProjectFeatures>
+                      <S.ProjectTextInDescContainer>
+                        <S.ProjectDescHorizontal>-</S.ProjectDescHorizontal>
+                        완벽하게 구현하지 못한 management가 아쉬웠고 프로젝트 기간이 늘어가는 것을{' '}
+                        <br />
+                        줄이려면 구조를 먼저 설계해야 한다고 느꼇다.
+                      </S.ProjectTextInDescContainer>
+                    </S.ProjectTextInDesc>
+                  </S.ProjectDescTexts>
+                </S.ProjectFeeling>
               </S.ProjectTextData>
             </S.TwoSection>
           </S.ProjectContainer>

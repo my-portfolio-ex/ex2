@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { motion } from 'framer-motion';
 
 export const ProjcetWrapper = styled.main`
   width: 100%;
@@ -45,7 +44,7 @@ export const ProjectDataSection = styled.section`
   position: relative;
 `;
 
-export const ProjectDate = styled(motion.h2)`
+export const ProjectDate = styled.h2`
   width: 7vw;
   color: #ffffff;
   font-size: 20px;
