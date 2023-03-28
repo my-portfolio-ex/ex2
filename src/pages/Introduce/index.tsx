@@ -32,14 +32,19 @@ export const IntroducePage: React.FC = () => {
     24: useScrollFadeIn<HTMLHeadingElement>('left', 1, 0.5),
   };
 
+  const introAnimation = {
+    0: useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.5),
+    1: useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.7),
+  };
+
   return (
     <S.IntroduceWrapper>
       <S.IntroducePageSection>
         <S.IntroduceDataSection>
           <S.IntroduceContainer widthBool={true}>
             <S.IntroduceIntro>
-              <S.IntroduceIntroName>박준희</S.IntroduceIntroName>
-              <S.IntroduceIntroTitle>자기소개</S.IntroduceIntroTitle>
+              <S.IntroduceIntroName {...introAnimation[0]}>박준희</S.IntroduceIntroName>
+              <S.IntroduceIntroTitle {...introAnimation[1]}>자기소개</S.IntroduceIntroTitle>
             </S.IntroduceIntro>
           </S.IntroduceContainer>
         </S.IntroduceDataSection>
@@ -183,7 +188,7 @@ export const IntroducePage: React.FC = () => {
           <S.IntroduceContainer widthBool={true}></S.IntroduceContainer>
         </S.IntroduceDataSection>
         <S.IntroduceDataSection>
-          <S.IntroduceContent>마무리</S.IntroduceContent>
+          <S.IntroduceContent>연락처</S.IntroduceContent>
           <S.IntroduceContainer widthBool={true}></S.IntroduceContainer>
         </S.IntroduceDataSection>
       </S.IntroducePageSection>
