@@ -17,6 +17,7 @@ export const ProjectPageSection = styled.section`
   ::-webkit-scrollbar {
     display: none;
   }
+  scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
   background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
     linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
@@ -37,11 +38,15 @@ export const ProjectPageSection = styled.section`
   transition: all 0.5s ease 0s;
 `;
 
-export const ProjectDataSection = styled.section`
+export const ProjectDataSection = styled.section<{ blurBoolean: boolean }>`
   height: 100vh;
   display: flex;
   scroll-snap-align: center;
   position: relative;
+  transition: all 0.5s;
+  ${(props) => (props.blurBoolean ? 'clip-path: polygon(0 0,100% 0,100% 100%,0% 100%)' : '')}
+  backdrop-filter: ${(props) => (props.blurBoolean ? 'blur(6px)' : 'none')};
+  filter: ${(props) => (props.blurBoolean ? 'blur(6px)' : 'none')};
 `;
 
 export const ProjectDate = styled.h2`
@@ -64,7 +69,7 @@ export const MouseDownPosition = styled.div`
   text-align: center;
   position: absolute;
   top: 80%;
-  right: 50%;
+  right: 48%;
 `;
 
 export const ProjectContainer = styled.div<{ widthBool: boolean }>`
@@ -255,4 +260,51 @@ export const ProjectFeeling = styled.h2`
   margin-bottom: 20rem;
   text-align: left;
   color: #f2f2f2;
+`;
+
+export const gotoButtonContainer = styled.div`
+  position: fixed;
+  z-index: 1000;
+
+  top: 47%;
+  right: 0;
+`;
+export const gotoButtonDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  width: 150px;
+`;
+export const gotoButton = styled.a`
+  width: 7px;
+  height: 7px;
+
+  margin: 10px 0 10px 10px;
+
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background: #c9c9c9;
+  transition: all 0.5s;
+  :hover {
+    background: #3e3e3e;
+  }
+`;
+
+export const gotoHoverText = styled.a`
+  font-size: 17px;
+  font-weight: 500;
+  margin-top: 1.5px;
+  margin-bottom: 15px;
+
+  text-decoration: none;
+  color: #c9c9c9;
+  transition: all 0.5s;
+  :hover {
+    margin-right: 5px;
+    transform: scale(1.2, 1.2);
+
+    font-weight: bold;
+    color: #fff;
+  }
 `;

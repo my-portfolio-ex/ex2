@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import * as S from './styled';
 
@@ -26,6 +26,15 @@ export const ProjectPage: React.FC = () => {
     0: useScrollFadeIn<HTMLHeadingElement>('down', 1, 1.5),
   };
   useSeo('박준희 | 프로젝트');
+  const g = [
+    { title: 'skyplanner', id: '#sp' },
+    { title: 'lawlearn', id: '#lawlearn' },
+  ];
+  const [blur, setBlur] = useState(false);
+  const handleMouseOver = () => {
+    setBlur(true);
+  };
+
   const dataArr = [
     {
       FeatTitle: '메인화면',
@@ -92,7 +101,30 @@ export const ProjectPage: React.FC = () => {
   return (
     <S.ProjcetWrapper>
       <S.ProjectPageSection>
-        <S.ProjectDataSection>
+        <S.gotoButtonContainer>
+          <S.gotoButtonDiv>
+            {g.map((cTitle, idx) => {
+              return (
+                <div key={idx} style={{ display: 'flex' }}>
+                  <S.gotoHoverText
+                    onMouseOver={() => setBlur(true)}
+                    onMouseLeave={() => setBlur(false)}
+                    href={cTitle.id}
+                  >
+                    {cTitle.title}
+                  </S.gotoHoverText>
+                  <S.gotoButton
+                    data-info={JSON.stringify(g)}
+                    onMouseOver={handleMouseOver}
+                    onMouseLeave={() => setBlur(false)}
+                    href={cTitle.id}
+                  ></S.gotoButton>
+                </div>
+              );
+            })}
+          </S.gotoButtonDiv>
+        </S.gotoButtonContainer>
+        <S.ProjectDataSection blurBoolean={blur}>
           <S.ProjectContainer widthBool={true}>
             <S.ProjectIntro>
               <S.ProjectIntroName {...scrollanimation[0]}>박준희</S.ProjectIntroName>
@@ -104,7 +136,7 @@ export const ProjectPage: React.FC = () => {
             </S.MouseDownPosition>
           </S.ProjectContainer>
         </S.ProjectDataSection>
-        <S.ProjectDataSection>
+        <S.ProjectDataSection blurBoolean={blur}>
           <S.ProjectDate {...scrollanimation[3]}>
             2<br />0<br />2<br />
             1
@@ -114,7 +146,7 @@ export const ProjectPage: React.FC = () => {
           </S.ProjectDate>
 
           <S.ProjectContainer widthBool={true}>
-            <S.TwoSection>
+            <S.TwoSection id="sp">
               <S.ProjectTitle {...scrollanimation[4]}>☁ SKYPLANNER</S.ProjectTitle>
               <S.ProjectTextData>
                 <S.ProjectDesc {...scrollanimation[5]}>
@@ -218,7 +250,7 @@ export const ProjectPage: React.FC = () => {
             </S.TwoSection>
           </S.ProjectContainer>
         </S.ProjectDataSection>
-        <S.ProjectDataSection>
+        <S.ProjectDataSection blurBoolean={blur}>
           <S.ProjectDate>
             2<br />0<br />2<br />
             2
@@ -227,7 +259,7 @@ export const ProjectPage: React.FC = () => {
             0<br />6
           </S.ProjectDate>
           <S.ProjectContainer widthBool={true}>
-            <S.ThreeSection>
+            <S.ThreeSection id="lawlearn">
               <S.ProjectTitle>🧾 LawLearn</S.ProjectTitle>
             </S.ThreeSection>
           </S.ProjectContainer>
