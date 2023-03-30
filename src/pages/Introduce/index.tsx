@@ -1,8 +1,7 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import * as S from './styled';
 
 import { useScrollFadeIn } from '@/hooks';
-import useMoveScroll from '../../hooks/useScrollMove';
 
 export const IntroducePage: React.FC = () => {
   const scrollhorizontalAnimation = {
@@ -38,29 +37,23 @@ export const IntroducePage: React.FC = () => {
     1: useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.7),
   };
 
-  const move = {
-    0: useMoveScroll(),
-    1: useMoveScroll(),
-    2: useMoveScroll(),
-    3: useMoveScroll(),
-    4: useMoveScroll(),
-    5: useMoveScroll(),
-    6: useMoveScroll(),
-  };
   const outerDivRef = useRef(null);
   let a = 0;
 
   useEffect(() => {
     const wheelHandler = (e: any) => {
-      a += 50;
       e.preventDefault();
       // 스크롤 행동 구현
       const { deltaX } = e;
       const { scrollLeft } = outerDivRef.current; // 스크롤 위쪽 끝부분 위치
+      if (a < 4000) {
+        a += 50;
+      }
+      window.innerWidth = a;
       const scrollWidth = window.innerWidth; // 화면 세로길이, 100vh와 같습니다.
-      if (deltaX > 0) {
+      if (deltaX > 0 && a < 4000) {
         if (scrollLeft >= 0 && scrollLeft < scrollWidth) {
-          console.log(a, deltaX);
+          console.log(a, deltaX, scrollWidth);
           outerDivRef.current.scrollTo({
             left: a,
             behavior: 'smooth',
@@ -74,20 +67,43 @@ export const IntroducePage: React.FC = () => {
       outerDivRefCurrent.removeEventListener('wheel', wheelHandler);
     };
   }, []);
+  const [mouseOver, setMouseOver] = useState([{ title: '' }]);
+  const g = [
+    { title: '간단소개', id: '#a' },
+    { title: '장단점', id: '#b' },
+    { title: '성장과정', id: '#c' },
+    { title: '경험', id: '#d' },
+    { title: '기술', id: '#e' },
+    { title: '연락처', id: '#f' },
+  ];
+  const [blur, setBlur] = useState(false);
+  const handleMouseOver = (event) => {
+    setMouseOver(JSON.parse(event.target.dataset.info));
+    setBlur(true);
+    console.log(mouseOver[0].title);
+  };
+
   return (
     <S.IntroduceWrapper>
       <S.IntroducePageSection>
         <S.gotoButtonContainer>
           <S.gotoButtonDiv>
-            <S.gotoButton onClick={move[0].onMoveToElement} />
-            <S.gotoButton onClick={move[1].onMoveToElement} />
-            <S.gotoButton onClick={move[2].onMoveToElement} />
-            <S.gotoButton onClick={move[3].onMoveToElement} />
-            <S.gotoButton onClick={move[4].onMoveToElement} />
-            <S.gotoButton onClick={move[5].onMoveToElement} />
+            {g.map((cTitle, idx) => {
+              return (
+                <div key={idx} style={{ display: 'flex' }}>
+                  <S.gotoButton
+                    data-info={JSON.stringify(g)}
+                    onMouseOver={handleMouseOver}
+                    onMouseLeave={() => setBlur(false)}
+                    href={cTitle.id}
+                  />
+                  <S.gotoHoverText>{cTitle.title}</S.gotoHoverText>
+                </div>
+              );
+            })}
           </S.gotoButtonDiv>
         </S.gotoButtonContainer>
-        <S.IntroduceDataSection>
+        <S.IntroduceDataSection blurBoolean={blur}>
           <S.IntroduceContainer widthBool={true}>
             <S.IntroduceIntro>
               <S.IntroduceIntroName {...introAnimation[0]}>박준희</S.IntroduceIntroName>
@@ -95,7 +111,7 @@ export const IntroducePage: React.FC = () => {
             </S.IntroduceIntro>
           </S.IntroduceContainer>
         </S.IntroduceDataSection>
-        <S.IntroduceDataSection ref={move[0].element}>
+        <S.IntroduceDataSection blurBoolean={blur} id="a">
           <S.IntroduceContent>간단소개</S.IntroduceContent>
           <S.IntroduceContainer widthBool={true}>
             <S.simpleContainer>
@@ -120,11 +136,11 @@ export const IntroducePage: React.FC = () => {
             </S.simpleContainer>
           </S.IntroduceContainer>
         </S.IntroduceDataSection>
-        <S.IntroduceDataSection ref={move[1].element}>
+        <S.IntroduceDataSection blurBoolean={blur} id="b">
           <S.IntroduceContent>장단점</S.IntroduceContent>
           <S.IntroduceContainer widthBool={true}></S.IntroduceContainer>
         </S.IntroduceDataSection>
-        <S.IntroduceDataSection ref={move[2].element}>
+        <S.IntroduceDataSection blurBoolean={blur} id="c">
           <S.IntroduceContent>성장과정</S.IntroduceContent>
           <S.IntroduceContainer widthBool={true}>
             <S.SeeTip>프로젝트는 눌러서 개발중 또는 완성된 결과를 보실 수 있습니다🙂</S.SeeTip>
@@ -226,15 +242,15 @@ export const IntroducePage: React.FC = () => {
             </S.growupPre>
           </S.IntroduceContainer>
         </S.IntroduceDataSection>
-        <S.IntroduceDataSection ref={move[3].element}>
+        <S.IntroduceDataSection blurBoolean={blur} id="d">
           <S.IntroduceContent>경험</S.IntroduceContent>
           <S.IntroduceContainer widthBool={true}></S.IntroduceContainer>
         </S.IntroduceDataSection>
-        <S.IntroduceDataSection ref={move[4].element}>
+        <S.IntroduceDataSection blurBoolean={blur} id="e">
           <S.IntroduceContent>기술</S.IntroduceContent>
           <S.IntroduceContainer widthBool={true}></S.IntroduceContainer>
         </S.IntroduceDataSection>
-        <S.IntroduceDataSection ref={move[5].element}>
+        <S.IntroduceDataSection blurBoolean={blur} id="f">
           <S.IntroduceContent>연락처</S.IntroduceContent>
           <S.IntroduceContainer widthBool={true}></S.IntroduceContainer>
         </S.IntroduceDataSection>
