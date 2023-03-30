@@ -83,14 +83,14 @@ export const IntroduceDataSection = styled.section<{ blurBoolean: boolean }>`
   display: flex;
   scroll-snap-align: center;
   position: relative;
-
   transition: all 0.5s;
-  backdrop-filter: ${(props) => (props.blurBoolean ? 'blur(3px)' : 'none')};
-  filter: ${(props) => (props.blurBoolean ? 'blur(3px)' : 'none')};
+  ${(props) => (props.blurBoolean ? 'clip-path: polygon(0 0,100% 0,100% 100%,0% 100%)' : '')}
+  backdrop-filter: ${(props) => (props.blurBoolean ? 'blur(6px)' : 'none')};
+  filter: ${(props) => (props.blurBoolean ? 'blur(6px)' : 'none')};
 `;
 
 export const IntroduceContainer = styled.div<{ widthBool: boolean }>`
-  width: 85vw;
+  width: 75vw;
   height: ${(props) => (props.widthBool ? '100vh' : '200vh')};
 
   margin: auto;
@@ -262,7 +262,7 @@ export const gotoButtonContainer = styled.div`
   position: fixed;
   z-index: 1000;
 
-  top: 40%;
+  top: 37%;
   left: 2.5%;
 `;
 export const gotoButtonDiv = styled.div`
@@ -275,7 +275,7 @@ export const gotoButton = styled.a`
   width: 7px;
   height: 7px;
 
-  margin: 10px 15px 10px 0;
+  margin: 10px 5px 10px 0;
 
   cursor: pointer;
   border: none;
@@ -287,9 +287,18 @@ export const gotoButton = styled.a`
   }
 `;
 
-export const gotoHoverText = styled.h3`
-  font-size: 15px;
+export const gotoHoverText = styled.a`
+  font-size: 17px;
   font-weight: 500;
-  margin-top: 5px;
-  margin-bottom: 15px;
+  margin-top: 4px;
+  margin-bottom: 10px;
+
+  text-decoration: none;
+  color: #3e3e3e;
+  transition: all 0.5s;
+  :hover {
+    transform: scale(1.2, 1.2);
+    margin-left: 5px;
+    color: #000;
+  }
 `;

@@ -67,7 +67,6 @@ export const IntroducePage: React.FC = () => {
       outerDivRefCurrent.removeEventListener('wheel', wheelHandler);
     };
   }, []);
-  const [mouseOver, setMouseOver] = useState([{ title: '' }]);
   const g = [
     { title: '간단소개', id: '#a' },
     { title: '장단점', id: '#b' },
@@ -77,10 +76,8 @@ export const IntroducePage: React.FC = () => {
     { title: '연락처', id: '#f' },
   ];
   const [blur, setBlur] = useState(false);
-  const handleMouseOver = (event) => {
-    setMouseOver(JSON.parse(event.target.dataset.info));
+  const handleMouseOver = () => {
     setBlur(true);
-    console.log(mouseOver[0].title);
   };
 
   return (
@@ -96,8 +93,14 @@ export const IntroducePage: React.FC = () => {
                     onMouseOver={handleMouseOver}
                     onMouseLeave={() => setBlur(false)}
                     href={cTitle.id}
-                  />
-                  <S.gotoHoverText>{cTitle.title}</S.gotoHoverText>
+                  ></S.gotoButton>
+                  <S.gotoHoverText
+                    onMouseOver={() => setBlur(true)}
+                    onMouseLeave={() => setBlur(false)}
+                    href={cTitle.id}
+                  >
+                    {cTitle.title}
+                  </S.gotoHoverText>
                 </div>
               );
             })}
