@@ -17,6 +17,7 @@ export const IntroducePageSection = styled.section`
   ::-webkit-scrollbar {
     display: none;
   }
+  scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
   background-color: #f6f6f6;
   background-image: linear-gradient(
@@ -77,11 +78,15 @@ export const IntroducePageSection = styled.section`
   transition: all 0.5s ease 0s;
 `;
 
-export const IntroduceDataSection = styled.section`
+export const IntroduceDataSection = styled.section<{ blurBoolean: boolean }>`
   height: 100vh;
   display: flex;
   scroll-snap-align: center;
   position: relative;
+
+  transition: all 0.5s;
+  backdrop-filter: ${(props) => (props.blurBoolean ? 'blur(3px)' : 'none')};
+  filter: ${(props) => (props.blurBoolean ? 'blur(3px)' : 'none')};
 `;
 
 export const IntroduceContainer = styled.div<{ widthBool: boolean }>`
@@ -257,27 +262,34 @@ export const gotoButtonContainer = styled.div`
   position: fixed;
   z-index: 1000;
 
-  top: 45%;
+  top: 40%;
   left: 2.5%;
 `;
 export const gotoButtonDiv = styled.div`
   display: flex;
   flex-direction: column;
 
-  width: 20px;
-  height: 150px;
-  border-radius: 5px;
-
-  background: gray;
+  width: 150px;
 `;
-export const gotoButton = styled.div`
+export const gotoButton = styled.a`
   width: 7px;
   height: 7px;
 
-  margin: auto;
+  margin: 10px 15px 10px 0;
 
   cursor: pointer;
   border: none;
   border-radius: 5px;
-  background: black;
+  background: #999;
+  transition: all 0.5s;
+  :hover {
+    background: #3e3e3e;
+  }
+`;
+
+export const gotoHoverText = styled.h3`
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 5px;
+  margin-bottom: 15px;
 `;
