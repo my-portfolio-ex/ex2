@@ -172,10 +172,11 @@ export const simpleIntroduce = styled.strong`
 //grow up procedure
 export const growupPre = styled.div`
   width: 85%;
-  overflow-x: scroll;
+  overflow-x: auto;
   ::-webkit-scrollbar {
     display: none;
   }
+
   display: flex;
   flex-direction: column;
   margin: auto 0 auto 0;
@@ -250,4 +251,33 @@ export const SeeTip = styled.strong`
   left: 33%;
   top: 20%;
   position: absolute;
+`;
+
+export const gotoButtonContainer = styled.div`
+  position: fixed;
+  z-index: 1000;
+
+  top: 45%;
+  left: 2.5%;
+`;
+export const gotoButtonDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  width: 20px;
+  height: 150px;
+  border-radius: 5px;
+
+  background: gray;
+`;
+export const gotoButton = styled.div`
+  width: 7px;
+  height: 7px;
+
+  margin: auto;
+
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background: black;
 `;

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import * as S from './styled';
 
 import { useScrollFadeIn } from '@/hooks';
+import useMoveScroll from '../../hooks/useScrollMove';
 
 export const IntroducePage: React.FC = () => {
   const scrollhorizontalAnimation = {
@@ -37,9 +38,55 @@ export const IntroducePage: React.FC = () => {
     1: useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.7),
   };
 
+  const move = {
+    0: useMoveScroll(),
+    1: useMoveScroll(),
+    2: useMoveScroll(),
+    3: useMoveScroll(),
+    4: useMoveScroll(),
+    5: useMoveScroll(),
+    6: useMoveScroll(),
+  };
+  const outerDivRef = useRef(null);
+  let a = 0;
+
+  useEffect(() => {
+    const wheelHandler = (e: any) => {
+      a += 50;
+      e.preventDefault();
+      // 스크롤 행동 구현
+      const { deltaX } = e;
+      const { scrollLeft } = outerDivRef.current; // 스크롤 위쪽 끝부분 위치
+      const scrollWidth = window.innerWidth; // 화면 세로길이, 100vh와 같습니다.
+      if (deltaX > 0) {
+        if (scrollLeft >= 0 && scrollLeft < scrollWidth) {
+          console.log(a, deltaX);
+          outerDivRef.current.scrollTo({
+            left: a,
+            behavior: 'smooth',
+          });
+        }
+      }
+    };
+    const outerDivRefCurrent = outerDivRef.current;
+    outerDivRefCurrent.addEventListener('wheel', wheelHandler);
+    return () => {
+      outerDivRefCurrent.removeEventListener('wheel', wheelHandler);
+    };
+  }, []);
   return (
     <S.IntroduceWrapper>
       <S.IntroducePageSection>
+        <S.gotoButtonContainer>
+          <S.gotoButtonDiv>
+            <S.gotoButton onClick={move[0].onMoveToElement} />
+            <S.gotoButton onClick={move[1].onMoveToElement} />
+            <S.gotoButton onClick={move[2].onMoveToElement} />
+            <S.gotoButton onClick={move[3].onMoveToElement} />
+            <S.gotoButton onClick={move[4].onMoveToElement} />
+            <S.gotoButton onClick={move[5].onMoveToElement} />
+          </S.gotoButtonDiv>
+        </S.gotoButtonContainer>
         <S.IntroduceDataSection>
           <S.IntroduceContainer widthBool={true}>
             <S.IntroduceIntro>
@@ -48,7 +95,7 @@ export const IntroducePage: React.FC = () => {
             </S.IntroduceIntro>
           </S.IntroduceContainer>
         </S.IntroduceDataSection>
-        <S.IntroduceDataSection>
+        <S.IntroduceDataSection ref={move[0].element}>
           <S.IntroduceContent>간단소개</S.IntroduceContent>
           <S.IntroduceContainer widthBool={true}>
             <S.simpleContainer>
@@ -73,15 +120,15 @@ export const IntroducePage: React.FC = () => {
             </S.simpleContainer>
           </S.IntroduceContainer>
         </S.IntroduceDataSection>
-        <S.IntroduceDataSection>
+        <S.IntroduceDataSection ref={move[1].element}>
           <S.IntroduceContent>장단점</S.IntroduceContent>
           <S.IntroduceContainer widthBool={true}></S.IntroduceContainer>
         </S.IntroduceDataSection>
-        <S.IntroduceDataSection>
+        <S.IntroduceDataSection ref={move[2].element}>
           <S.IntroduceContent>성장과정</S.IntroduceContent>
           <S.IntroduceContainer widthBool={true}>
             <S.SeeTip>프로젝트는 눌러서 개발중 또는 완성된 결과를 보실 수 있습니다🙂</S.SeeTip>
-            <S.growupPre>
+            <S.growupPre ref={outerDivRef}>
               <S.EventBoxContainer>
                 <S.EventBox marginValue="0.5rem" {...scrollhorizontalAnimation[0]}>
                   <S.EventBoxText>ITQ한글 A등급 취득</S.EventBoxText>
@@ -179,15 +226,15 @@ export const IntroducePage: React.FC = () => {
             </S.growupPre>
           </S.IntroduceContainer>
         </S.IntroduceDataSection>
-        <S.IntroduceDataSection>
+        <S.IntroduceDataSection ref={move[3].element}>
           <S.IntroduceContent>경험</S.IntroduceContent>
           <S.IntroduceContainer widthBool={true}></S.IntroduceContainer>
         </S.IntroduceDataSection>
-        <S.IntroduceDataSection>
+        <S.IntroduceDataSection ref={move[4].element}>
           <S.IntroduceContent>기술</S.IntroduceContent>
           <S.IntroduceContainer widthBool={true}></S.IntroduceContainer>
         </S.IntroduceDataSection>
-        <S.IntroduceDataSection>
+        <S.IntroduceDataSection ref={move[5].element}>
           <S.IntroduceContent>연락처</S.IntroduceContent>
           <S.IntroduceContainer widthBool={true}></S.IntroduceContainer>
         </S.IntroduceDataSection>
