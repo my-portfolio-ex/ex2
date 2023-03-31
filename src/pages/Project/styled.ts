@@ -45,8 +45,8 @@ export const ProjectDataSection = styled.section<{ blurBoolean: boolean }>`
   position: relative;
   transition: all 0.5s;
   ${(props) => (props.blurBoolean ? 'clip-path: polygon(0 0,100% 0,100% 100%,0% 100%)' : '')}
-  backdrop-filter: ${(props) => (props.blurBoolean ? 'blur(6px)' : 'none')};
-  filter: ${(props) => (props.blurBoolean ? 'blur(6px)' : 'none')};
+  backdrop-filter: ${(props) => (props.blurBoolean ? 'blur(7px)' : 'none')};
+  filter: ${(props) => (props.blurBoolean ? 'blur(7px)' : 'none')};
 `;
 
 export const ProjectDate = styled.h2`
