@@ -37,6 +37,15 @@ export const IntroducePage: React.FC = () => {
     1: useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.7),
   };
 
+  const contentAnimation = {
+    0: useScrollFadeIn<HTMLHeadingElement>('left', 1, 0.5),
+    1: useScrollFadeIn<HTMLHeadingElement>('left', 1, 0.7),
+    2: useScrollFadeIn<HTMLHeadingElement>('left', 1, 0.9),
+    3: useScrollFadeIn<HTMLHeadingElement>('left', 1, 1.1),
+    4: useScrollFadeIn<HTMLHeadingElement>('left', 1, 1.3),
+    5: useScrollFadeIn<HTMLHeadingElement>('left', 1, 1.5),
+  };
+
   const outerDivRef = useRef(null);
   let a = 0;
 
@@ -68,12 +77,12 @@ export const IntroducePage: React.FC = () => {
     };
   }, []);
   const g = [
-    { title: '간단소개', id: '#a' },
-    { title: '장단점', id: '#b' },
-    { title: '성장과정', id: '#c' },
-    { title: '경험', id: '#d' },
-    { title: '기술', id: '#e' },
-    { title: '연락처', id: '#f' },
+    { title: '간단소개', id: '#a', animation: 0 },
+    { title: '장단점', id: '#b', animation: 1 },
+    { title: '성장과정', id: '#c', animation: 2 },
+    { title: '경험', id: '#d', animation: 3 },
+    { title: '기술', id: '#e', animation: 4 },
+    { title: '연락처', id: '#f', animation: 5 },
   ];
   const [blur, setBlur] = useState(false);
   const handleMouseOver = () => {
@@ -94,13 +103,15 @@ export const IntroducePage: React.FC = () => {
                     onMouseLeave={() => setBlur(false)}
                     href={cTitle.id}
                   ></S.gotoButton>
-                  <S.gotoHoverText
-                    onMouseOver={() => setBlur(true)}
-                    onMouseLeave={() => setBlur(false)}
-                    href={cTitle.id}
-                  >
-                    {cTitle.title}
-                  </S.gotoHoverText>
+                  <div {...contentAnimation[cTitle.animation]}>
+                    <S.gotoHoverText
+                      onMouseOver={() => setBlur(true)}
+                      onMouseLeave={() => setBlur(false)}
+                      href={cTitle.id}
+                    >
+                      {cTitle.title}
+                    </S.gotoHoverText>
+                  </div>
                 </div>
               );
             })}

@@ -85,10 +85,9 @@ export const IntroduceDataSection = styled.section<{ blurBoolean: boolean }>`
   position: relative;
   transition: all 0.5s;
   ${(props) => (props.blurBoolean ? 'clip-path: polygon(0 0,100% 0,100% 100%,0% 100%)' : '')}
-  backdrop-filter: ${(props) => (props.blurBoolean ? 'blur(6px)' : 'none')};
-  filter: ${(props) => (props.blurBoolean ? 'blur(6px)' : 'none')};
+  backdrop-filter: ${(props) => (props.blurBoolean ? 'blur(7px)' : 'none')};
+  filter: ${(props) => (props.blurBoolean ? 'blur(7px)' : 'none')};
 `;
-
 export const IntroduceContainer = styled.div<{ widthBool: boolean }>`
   width: 75vw;
   height: ${(props) => (props.widthBool ? '100vh' : '200vh')};
@@ -275,7 +274,7 @@ export const gotoButton = styled.a`
   width: 7px;
   height: 7px;
 
-  margin: 10px 5px 10px 0;
+  margin: 6px 5px 18px 0;
 
   cursor: pointer;
   border: none;
@@ -290,15 +289,12 @@ export const gotoButton = styled.a`
 export const gotoHoverText = styled.a`
   font-size: 17px;
   font-weight: 500;
-  margin-top: 4px;
-  margin-bottom: 10px;
 
   text-decoration: none;
   color: #3e3e3e;
   transition: all 0.5s;
   :hover {
-    transform: scale(1.2, 1.2);
-    margin-left: 5px;
+    margin-left: 10px;
     color: #000;
   }
 `;
