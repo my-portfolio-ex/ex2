@@ -70,7 +70,7 @@ export const ProjectPage: React.FC = () => {
       scrollNum: 2,
     },
     {
-      FeatTitle: '솔류션 페이지',
+      FeatTitle: '솔루션 페이지',
       ImgSrcDesk1: 'https://i.ibb.co/QH5VQCv/image.png',
       ImgSrcDesk2: 'https://i.ibb.co/SxYcwH4/image.png',
       scrollNum: 3,
@@ -153,6 +153,26 @@ export const ProjectPage: React.FC = () => {
       scrollNum: 20,
     },
   ];
+  const spInfoArr = [
+    {
+      infoTitle: 'github_frontend',
+      href: 'https://github.com/alpha0212/SP_frontend',
+    },
+    {
+      infoTitle: 'github_backend',
+      href: 'https://github.com/alpha0212/SP_backend',
+    },
+  ];
+  const lawInfoArr = [
+    {
+      infoTitle: 'github',
+      href: 'https://github.com/alpha0212/Law_PROJECT',
+    },
+    {
+      infoTitle: 'release url',
+      href: 'https://www.lawlearn.site/',
+    },
+  ];
   return (
     <S.ProjcetWrapper>
       <S.ProjectPageSection>
@@ -227,6 +247,30 @@ export const ProjectPage: React.FC = () => {
                         기능들을 추가하며 <br />
                         여러 hook과 typescript를 배움
                       </S.ProjectTextInDescContainer>
+                      <S.ProjectTextInDescContainer>
+                        <S.ProjectDescHorizontal>-</S.ProjectDescHorizontal>
+                        백엔드로는 sequelize를 사용하여 쉽게 환경을 구성하고 nodejs 기반 post,
+                        get구현
+                      </S.ProjectTextInDescContainer>
+                    </S.ProjectTextInDesc>
+                  </S.ProjectDescTexts>
+                </S.ProjectDesc>
+                <S.EmptySpace />
+                <S.ProjectDesc>
+                  INFO
+                  <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
+                    <S.ProjectTextInDesc>
+                      {spInfoArr.map((infoValue, idx) => {
+                        return (
+                          <S.ProjectTextInDescContainer key={idx}>
+                            <span style={{ marginRight: '5px' }}>{infoValue.infoTitle}</span>
+                            <S.ProjectDescHorizontal>-</S.ProjectDescHorizontal>
+                            <S.aTagUrl href={infoValue.href} target="_blank" rel="noreferrer">
+                              {infoValue.href}
+                            </S.aTagUrl>
+                          </S.ProjectTextInDescContainer>
+                        );
+                      })}
                     </S.ProjectTextInDesc>
                   </S.ProjectDescTexts>
                 </S.ProjectDesc>
@@ -344,6 +388,25 @@ export const ProjectPage: React.FC = () => {
                     </S.ProjectTextInDesc>
                   </S.ProjectDescTexts>
                 </S.ProjectDesc>
+                <S.EmptySpace />
+                <S.ProjectDesc>
+                  INFO
+                  <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
+                    <S.ProjectTextInDesc>
+                      {lawInfoArr.map((infoValue, idx) => {
+                        return (
+                          <S.ProjectTextInDescContainer key={idx}>
+                            <span style={{ marginRight: '5px' }}>{infoValue.infoTitle}</span>
+                            <S.ProjectDescHorizontal>-</S.ProjectDescHorizontal>
+                            <S.aTagUrl href={infoValue.href} target="_blank" rel="noreferrer">
+                              {infoValue.href}
+                            </S.aTagUrl>
+                          </S.ProjectTextInDescContainer>
+                        );
+                      })}
+                    </S.ProjectTextInDesc>
+                  </S.ProjectDescTexts>
+                </S.ProjectDesc>
                 <S.ProjectFeatures>FEATURES</S.ProjectFeatures>
                 {lawArr.map((val, idx) => {
                   return (
@@ -398,16 +461,13 @@ export const ProjectPage: React.FC = () => {
                     <S.ProjectTextInDesc>
                       <S.ProjectTextInDescContainer>
                         <S.ProjectDescHorizontal>-</S.ProjectDescHorizontal>
-                        처음 시작해본 프로젝트였기 때문에 알아볼 것도 많았고 부족한 점도 많았다.{' '}
-                        <br /> 하지만 버그가 생겼을 때 구글링하고 해결한 뒤 방법을 기록하게 되었다.
+                        LawLearn 프로젝트를 통해서 여러 인터렉션 기능을 개발했는데
                       </S.ProjectTextInDescContainer>
                       <S.EmptySpace />
 
                       <S.ProjectTextInDescContainer>
                         <S.ProjectDescHorizontal>-</S.ProjectDescHorizontal>
                         완벽하게 구현하지 못한 management가 아쉬웠고 프로젝트 기간이 늘어가는 것을{' '}
-                        <br />
-                        줄이려면 구조를 먼저 설계해야 한다고 느꼇다.
                       </S.ProjectTextInDescContainer>
                     </S.ProjectTextInDesc>
                   </S.ProjectDescTexts>
