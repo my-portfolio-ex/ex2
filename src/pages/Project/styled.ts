@@ -45,8 +45,8 @@ export const ProjectDataSection = styled.section<{ blurBoolean: boolean }>`
   position: relative;
   transition: all 0.5s;
   ${(props) => (props.blurBoolean ? 'clip-path: polygon(0 0,100% 0,100% 100%,0% 100%)' : '')}
-  backdrop-filter: ${(props) => (props.blurBoolean ? 'blur(7px)' : 'none')};
-  filter: ${(props) => (props.blurBoolean ? 'blur(7px)' : 'none')};
+  backdrop-filter: ${(props) => (props.blurBoolean ? 'blur(8px)' : 'none')};
+  filter: ${(props) => (props.blurBoolean ? 'blur(8px)' : 'none')};
 `;
 
 export const ProjectDate = styled.h2`
@@ -173,7 +173,7 @@ export const ProjectDesc = styled.h2`
   font-size: 20px;
   font-weight: bold;
 
-  margin-top: 2rem;
+  margin-top: 3rem;
   text-align: left;
   color: #f2f2f2;
 `;
@@ -306,5 +306,14 @@ export const gotoHoverText = styled.a`
 
     font-weight: bold;
     color: #fff;
+  }
+`;
+
+export const aTagUrl = styled.a`
+  text-decoration: none;
+  color: #fff;
+
+  :hover {
+    border-bottom: 1px solid #fff;
   }
 `;
