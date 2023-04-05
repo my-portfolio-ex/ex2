@@ -1,12 +1,10 @@
 import { css } from '@emotion/react';
 
-import { pretendardFont } from './font';
 import { reset } from './reset';
 import { colors } from './colors';
 
 export const globalStyle = css`
   ${reset}
-  ${pretendardFont}
 
   * {
     box-sizing: border-box;
@@ -14,14 +12,14 @@ export const globalStyle = css`
 
   html {
     font-size: 10px;
+    scroll-behavior: smooth;
   }
 
-  html,
   body {
     width: 100%;
     height: 100%;
+    margin: 0;
     color: ${colors.white};
-    background-color: #000000;
     font-family: Pretendard;
   }
 
