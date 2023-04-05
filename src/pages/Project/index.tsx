@@ -7,6 +7,13 @@ import { useScrollFadeIn, useSeo } from '@/hooks';
 import { MouseDown } from '@components/MouseDown';
 
 export const ProjectPage: React.FC = () => {
+  const lawAnimation = {
+    0: useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.2),
+    1: useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.5),
+    2: useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.5),
+    3: useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.9),
+    4: useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.8),
+  };
   const scrollanimation = {
     0: useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.5),
     1: useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.7),
@@ -39,6 +46,10 @@ export const ProjectPage: React.FC = () => {
     2: useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.5),
     3: useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.5),
     4: useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.5),
+  };
+  const infoScroll = {
+    0: useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.5),
+    1: useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.5),
   };
   useSeo('박준희 | 프로젝트');
   const g = [
@@ -157,20 +168,24 @@ export const ProjectPage: React.FC = () => {
     {
       infoTitle: 'github_frontend',
       href: 'https://github.com/alpha0212/SP_frontend',
+      scrollNum: 0,
     },
     {
       infoTitle: 'github_backend',
       href: 'https://github.com/alpha0212/SP_backend',
+      scrollNum: 1,
     },
   ];
   const lawInfoArr = [
     {
       infoTitle: 'github',
       href: 'https://github.com/alpha0212/Law_PROJECT',
+      scrollNum: 0,
     },
     {
       infoTitle: 'release url',
       href: 'https://www.lawlearn.site/',
+      scrollNum: 1,
     },
   ];
   return (
@@ -221,7 +236,7 @@ export const ProjectPage: React.FC = () => {
           </S.ProjectDate>
 
           <S.ProjectContainer widthBool={true}>
-            <S.TwoSection id="sp">
+            <S.Section id="sp">
               <S.ProjectTitle {...scrollanimation[4]}>☁ SKYPLANNER</S.ProjectTitle>
               <S.ProjectTextData>
                 <S.ProjectDesc {...scrollanimation[5]}>
@@ -256,7 +271,7 @@ export const ProjectPage: React.FC = () => {
                   </S.ProjectDescTexts>
                 </S.ProjectDesc>
                 <S.EmptySpace />
-                <S.ProjectDesc>
+                <S.ProjectDesc {...infoScroll[0]}>
                   INFO
                   <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
                     <S.ProjectTextInDesc>
@@ -346,7 +361,7 @@ export const ProjectPage: React.FC = () => {
                   </S.ProjectDescTexts>
                 </S.ProjectFeeling>
               </S.ProjectTextData>
-            </S.TwoSection>
+            </S.Section>
           </S.ProjectContainer>
         </S.ProjectDataSection>
         <S.ProjectDataSection blurBoolean={blur}>
@@ -358,13 +373,13 @@ export const ProjectPage: React.FC = () => {
             0<br />6
           </S.ProjectDate>
           <S.ProjectContainer widthBool={true}>
-            <S.ThreeSection id="lawlearn">
-              <S.ProjectTitle>🧾 LawLearn</S.ProjectTitle>
+            <S.Section id="lawlearn">
+              <S.ProjectTitle {...lawAnimation[0]}>🧾 LawLearn</S.ProjectTitle>
               <S.ProjectTextData>
-                <S.ProjectDesc>
+                <S.ProjectDesc {...lawAnimation[1]}>
                   BACKGROUND
                   <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
-                    <S.ProjectTextInDesc>
+                    <S.ProjectTextInDesc {...lawAnimation[3]}>
                       <S.ProjectTextInDescContainer>
                         <S.ProjectDescHorizontal>-</S.ProjectDescHorizontal>
                         정보화시대가 발전하면서 사이버공간에서의 모욕 및 명예훼손이 빈번해졌고
@@ -375,10 +390,10 @@ export const ProjectPage: React.FC = () => {
                   </S.ProjectDescTexts>
                 </S.ProjectDesc>
                 <S.EmptySpace />
-                <S.ProjectDesc>
+                <S.ProjectDesc {...lawAnimation[2]}>
                   LEARN
                   <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
-                    <S.ProjectTextInDesc>
+                    <S.ProjectTextInDesc {...lawAnimation[4]}>
                       <S.ProjectTextInDescContainer>
                         <S.ProjectDescHorizontal>-</S.ProjectDescHorizontal>
                         처음 시도해본 프로젝트로 많은 시간이 들었고 개발을 하면서 욕심이 생겨 여러
@@ -389,7 +404,7 @@ export const ProjectPage: React.FC = () => {
                   </S.ProjectDescTexts>
                 </S.ProjectDesc>
                 <S.EmptySpace />
-                <S.ProjectDesc>
+                <S.ProjectDesc {...infoScroll[1]}>
                   INFO
                   <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
                     <S.ProjectTextInDesc>
@@ -461,19 +476,15 @@ export const ProjectPage: React.FC = () => {
                     <S.ProjectTextInDesc>
                       <S.ProjectTextInDescContainer>
                         <S.ProjectDescHorizontal>-</S.ProjectDescHorizontal>
-                        LawLearn 프로젝트를 통해서 여러 인터렉션 기능을 개발했는데
+                        LawLearn 프로젝트를 통해서 여러 인터렉션 디자인 기능을 개발하면서 <br />{' '}
+                        custom hook을 구현하였고 state를 활용하면서 관리하는 방법을 익혔다.
                       </S.ProjectTextInDescContainer>
                       <S.EmptySpace />
-
-                      <S.ProjectTextInDescContainer>
-                        <S.ProjectDescHorizontal>-</S.ProjectDescHorizontal>
-                        완벽하게 구현하지 못한 management가 아쉬웠고 프로젝트 기간이 늘어가는 것을{' '}
-                      </S.ProjectTextInDescContainer>
                     </S.ProjectTextInDesc>
                   </S.ProjectDescTexts>
                 </S.ProjectFeeling>
               </S.ProjectTextData>
-            </S.ThreeSection>
+            </S.Section>
           </S.ProjectContainer>
         </S.ProjectDataSection>
       </S.ProjectPageSection>
