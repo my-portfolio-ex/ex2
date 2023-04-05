@@ -129,13 +129,7 @@ export const ProjectIntroDate = styled.div`
 `;
 
 //section
-export const TwoSection = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-`;
-export const ThreeSection = styled.div`
+export const Section = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
