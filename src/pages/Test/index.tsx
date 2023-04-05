@@ -1,16 +1,22 @@
 import React from 'react';
 import Lazy from '@components/test/index';
+import * as S from './styled';
+import { styles } from './styled';
+import { Global } from '@emotion/react';
 export const Test: React.FC = () => {
   return (
-    <div>
-      {[...Array(100)].map((val, index) => {
-        return (
-          <Lazy
-            key={index}
-            src="https://blog.kakaocdn.net/dn/ck83td/btrcwxeJJm6/ugdgkwZcq1YTnNEnksZ4z1/img.jpg"
-          />
-        );
-      })}
-    </div>
+    <>
+      <Global styles={styles} />
+      <S.codepen>
+        <S.c marginTopValue="0">C</S.c>
+        <S.c marginTopValue="50vw">O</S.c>
+        <S.c marginTopValue="150vw">D</S.c>
+        <S.c marginTopValue="250vw">E</S.c>
+        <S.c marginTopValue="350vw">P</S.c>
+        <S.c marginTopValue="450vw">E</S.c>
+        <S.c marginTopValue="550vw">N</S.c>
+        <S.c marginTopValue="650vw"></S.c>
+      </S.codepen>
+    </>
   );
 };
