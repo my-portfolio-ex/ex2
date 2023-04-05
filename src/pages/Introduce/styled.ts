@@ -183,7 +183,7 @@ export const growupPre = styled.div`
 
   display: flex;
   flex-direction: column;
-  margin: auto 0 auto 0;
+  margin: auto;
 `;
 
 export const EventBox = styled.div<{ marginValue: string }>`
@@ -251,6 +251,7 @@ export const horizontalPointContainer = styled.div`
 export const SeeTip = styled.strong`
   font-size: 20px;
   font-weight: 500;
+  color: #000;
 
   left: 33%;
   top: 20%;
