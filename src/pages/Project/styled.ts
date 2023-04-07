@@ -56,8 +56,13 @@ export const ProjectDate = styled.h2`
   font-weight: 700;
   letter-spacing: 1px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
   position: absolute;
-  top: 35%;
+  top: 40%;
+  & > * {
+    transform: rotate(90deg);
+  }
 `;
 
 export const MouseDownPosition = styled.div`
@@ -113,7 +118,7 @@ export const ProjectIntroTitle = styled.strong`
   font-weight: 400;
   color: #f2f2f2;
 
-  margin-top: 3px;
+  margin-top: 5px;
 `;
 
 export const ProjectIntroDate = styled.div`
