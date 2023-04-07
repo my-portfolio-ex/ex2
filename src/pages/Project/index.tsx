@@ -52,10 +52,7 @@ export const ProjectPage: React.FC = () => {
     1: useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.5),
   };
   useSeo('박준희 | 프로젝트');
-  const g = [
-    { title: 'skyplanner', id: '#sp' },
-    { title: 'lawlearn', id: '#lawlearn' },
-  ];
+
   const [blur, setBlur] = useState(false);
   const handleMouseOver = () => {
     setBlur(true);
@@ -188,6 +185,21 @@ export const ProjectPage: React.FC = () => {
       scrollNum: 1,
     },
   ];
+  const [g, setG] = useState([
+    {
+      id: '#sp',
+      title: 'skyplanner',
+    },
+    {
+      id: '#lawlearn',
+      title: 'lawlearn',
+    },
+    {
+      id: '#langtudy',
+      title: 'langtudy',
+    },
+  ]);
+  //스타일 따로 지정하는법
   return (
     <S.ProjcetWrapper>
       <S.ProjectPageSection>
@@ -195,20 +207,32 @@ export const ProjectPage: React.FC = () => {
           <S.gotoButtonDiv>
             {g.map((cTitle, idx) => {
               return (
-                <div key={idx} style={{ display: 'flex' }}>
-                  <S.gotoHoverText
-                    onMouseOver={() => setBlur(true)}
-                    onMouseLeave={() => setBlur(false)}
-                    href={cTitle.id}
+                <div
+                  key={idx}
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                  }}
+                >
+                  <div
+                    style={{
+                      display: 'flex',
+                    }}
                   >
-                    {cTitle.title}
-                  </S.gotoHoverText>
-                  <S.gotoButton
-                    data-info={JSON.stringify(g)}
-                    onMouseOver={handleMouseOver}
-                    onMouseLeave={() => setBlur(false)}
-                    href={cTitle.id}
-                  ></S.gotoButton>
+                    <S.gotoHoverText
+                      onMouseOver={() => setBlur(true)}
+                      onMouseLeave={() => setBlur(false)}
+                      href={cTitle.id}
+                    >
+                      {cTitle.title}
+                    </S.gotoHoverText>
+                    <S.gotoButton
+                      data-info={JSON.stringify(g)}
+                      onMouseOver={handleMouseOver}
+                      onMouseLeave={() => setBlur(false)}
+                      href={cTitle.id}
+                    ></S.gotoButton>
+                  </div>
                 </div>
               );
             })}
@@ -228,11 +252,13 @@ export const ProjectPage: React.FC = () => {
         </S.ProjectDataSection>
         <S.ProjectDataSection blurBoolean={blur}>
           <S.ProjectDate {...scrollanimation[3]}>
-            2<br />0<br />2<br />
-            1
+            <span>2</span>
+            <span>0</span>
+            <span>2</span>
+            <span>1</span>
             <br />
-            <br />
-            1<br />2
+            <span>1</span>
+            <span>2</span>
           </S.ProjectDate>
 
           <S.ProjectContainer widthBool={true}>
