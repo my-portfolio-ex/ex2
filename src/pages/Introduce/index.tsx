@@ -47,35 +47,7 @@ export const IntroducePage: React.FC = () => {
   };
 
   const outerDivRef = useRef(null);
-  let a = 0;
 
-  useEffect(() => {
-    const wheelHandler = (e: any) => {
-      e.preventDefault();
-      // 스크롤 행동 구현
-      const { deltaX } = e;
-      const { scrollLeft } = outerDivRef.current; // 스크롤 위쪽 끝부분 위치
-      if (a < 4000) {
-        a += 50;
-      }
-      window.innerWidth = a;
-      const scrollWidth = window.innerWidth; // 화면 세로길이, 100vh와 같습니다.
-      if (deltaX > 0 && a < 4000) {
-        if (scrollLeft >= 0 && scrollLeft < scrollWidth) {
-          console.log(a, deltaX, scrollWidth);
-          outerDivRef.current.scrollTo({
-            left: a,
-            behavior: 'smooth',
-          });
-        }
-      }
-    };
-    const outerDivRefCurrent = outerDivRef.current;
-    outerDivRefCurrent.addEventListener('wheel', wheelHandler);
-    return () => {
-      outerDivRefCurrent.removeEventListener('wheel', wheelHandler);
-    };
-  }, []);
   const g = [
     { title: '간단소개', id: '#a', animation: 0 },
     { title: '장단점', id: '#b', animation: 1 },
@@ -96,7 +68,7 @@ export const IntroducePage: React.FC = () => {
           <S.gotoButtonDiv>
             {g.map((cTitle, idx) => {
               return (
-                <div key={idx} style={{ display: 'flex' }}>
+                <div key={idx} style={{ display: 'flex', margin: '4px 0 4px 0' }}>
                   <S.gotoButton
                     data-info={JSON.stringify(g)}
                     onMouseOver={handleMouseOver}
@@ -198,19 +170,19 @@ export const IntroducePage: React.FC = () => {
                 </S.EventBox>
               </S.EventBoxContainer>
               <S.horizontalLine>
-                <S.horizontalPoint />
-                <S.horizontalPoint style={{ left: '8.5%' }} />
-                <S.horizontalPoint style={{ left: '18.6%' }} />
-                <S.horizontalPoint style={{ left: '27%' }} />
-                <S.horizontalPoint style={{ left: '35.4%' }} />
-                <S.horizontalPoint style={{ left: '41.3%' }} />
-                <S.horizontalPoint style={{ left: '46.9%' }} />
-                <S.horizontalPoint style={{ left: '60.2%' }} />
-                <S.horizontalPoint style={{ left: '65.6%' }} />
-                <S.horizontalPoint style={{ left: '70.1%' }} />
-                <S.horizontalPoint style={{ left: '77.5%' }} />
-                <S.horizontalPoint style={{ left: '82.7%' }} />
-                <S.horizontalPoint style={{ left: '90.1%' }} />
+                <S.horizontalPoint eachLeft="89px" />
+                <S.horizontalPoint eachLeft="8.5%" />
+                <S.horizontalPoint eachLeft="18.6%" />
+                <S.horizontalPoint eachLeft="27%" />
+                <S.horizontalPoint eachLeft="35.4%" />
+                <S.horizontalPoint eachLeft="41.3%" />
+                <S.horizontalPoint eachLeft="46.9%" />
+                <S.horizontalPoint eachLeft="60.2%" />
+                <S.horizontalPoint eachLeft="65.6%" />
+                <S.horizontalPoint eachLeft="70.1%" />
+                <S.horizontalPoint eachLeft="77.5%" />
+                <S.horizontalPoint eachLeft="82.7%" />
+                <S.horizontalPoint eachLeft="90.1%" />
               </S.horizontalLine>
               <S.EventBoxDateContainer>
                 <S.EventBoxDate marginValue="" {...scrollhorizontalAnimation[2]}>
