@@ -206,11 +206,11 @@ export const horizontalLine = styled.div`
   position: relative;
 `;
 
-export const horizontalPoint = styled.div`
+export const horizontalPoint = styled.div<{ eachLeft: string }>`
   position: absolute;
   width: 8px;
   height: 8px;
-  left: 89px;
+  left: ${(props) => props.eachLeft};
   background: #2c2c2c;
   top: -4px;
   border-radius: 1px 0 10px 0;
@@ -232,6 +232,7 @@ export const EventBoxDateContainer = styled.div`
 `;
 
 export const EventBoxDate = styled.div<{ marginValue: string }>`
+  color: #000;
   font-size: 15px;
   font-weight: 400;
   text-align: center;
@@ -262,7 +263,7 @@ export const gotoButtonContainer = styled.div`
   position: fixed;
   z-index: 1000;
 
-  top: 37%;
+  top: 40%;
   left: 2.5%;
 `;
 export const gotoButtonDiv = styled.div`
@@ -272,10 +273,11 @@ export const gotoButtonDiv = styled.div`
   width: 150px;
 `;
 export const gotoButton = styled.a`
+  position: fixed;
   width: 7px;
   height: 7px;
 
-  margin: 6px 5px 18px 0;
+  margin: 5px 0 18px 0;
 
   cursor: pointer;
   border: none;
@@ -289,13 +291,22 @@ export const gotoButton = styled.a`
 
 export const gotoHoverText = styled.a`
   font-size: 17px;
-  font-weight: 500;
+  font-weight: 400;
 
+  margin: 0 auto 0 15px;
   text-decoration: none;
   color: #3e3e3e;
-  transition: all 0.5s;
+  transition: all 0.2s;
   :hover {
-    margin-left: 10px;
+    margin-left: 25px;
+
+    font-weight: 500;
     color: #000;
   }
+`;
+
+export const gotoHoverTextContainer = styled.div`
+  width: 100%;
+
+  display: flex;
 `;
