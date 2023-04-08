@@ -19,21 +19,7 @@ export const ProjectPageSection = styled.section`
   }
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
-  background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
-    linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
-    linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
-    linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
-    linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
-    linear-gradient(
-      #1d1d1d 25%,
-      #1a1a1a 25%,
-      #1a1a1a 50%,
-      transparent 50%,
-      transparent 75%,
-      #242424 75%,
-      #242424
-    );
-  background-color: #131313;
+  background-color: #161616;
   background-size: 20px 20px;
   transition: all 0.5s ease 0s;
 `;
@@ -162,7 +148,7 @@ export const ProjectDescHorizontal = styled.div`
   font-weight: 400;
   color: #f2f2f2;
 
-  padding-right: 10px;
+  padding-right: 8px;
 `;
 
 export const ProjectDesc = styled.h2`
@@ -173,6 +159,7 @@ export const ProjectDesc = styled.h2`
   font-weight: bold;
 
   margin-top: 3rem;
+  margin-bottom: 2.5rem;
   text-align: left;
   color: #f2f2f2;
 `;
@@ -186,7 +173,10 @@ export const ProjectTextInDesc = styled.div`
 
 export const ProjectTextInDescContainer = styled.div`
   display: flex;
-  line-height: 1.3em;
+  line-height: 1.35em;
+  letter-spacing: 0.3px;
+
+  font-size: 17px;
 `;
 
 export const ProjectDescTexts = styled.span`
@@ -234,6 +224,7 @@ export const DesktopImgContainer = styled.div<{ widthValue: string }>`
 export const ResponsiveImgContainer = styled.div<{ widthValue: string }>`
   width: ${(props) => props.widthValue};
   margin-left: 2%;
+  margin-top: 2%;
 `;
 
 export const ResImgContainer = styled.div`
@@ -244,8 +235,9 @@ export const ProjectImgDesc = styled.h3`
   width: 100%;
   text-align: center;
 
-  font-size: 15px;
-  font-weight: bold;
+  font-size: 10px;
+  font-weight: 400;
+  margin-bottom: 20px;
 `;
 
 export const ProjectFeeling = styled.h2`
@@ -266,7 +258,7 @@ export const gotoButtonContainer = styled.div`
   z-index: 1000;
 
   top: 47%;
-  right: 0;
+  right: 5px;
 `;
 export const gotoButtonDiv = styled.div`
   display: flex;
@@ -275,10 +267,12 @@ export const gotoButtonDiv = styled.div`
   width: 150px;
 `;
 export const gotoButton = styled.a`
+  position: fixed;
   width: 7px;
   height: 7px;
 
-  margin: 10px 0 10px 10px;
+  margin: 8px 0 10px 0;
+  right: 20px;
 
   cursor: pointer;
   border: none;
@@ -291,19 +285,19 @@ export const gotoButton = styled.a`
 `;
 
 export const gotoHoverText = styled.a`
+  width: 80px;
   font-size: 17px;
-  font-weight: 500;
+  font-weight: 400;
   margin-top: 1.5px;
   margin-bottom: 15px;
 
   text-decoration: none;
   color: #c9c9c9;
-  transition: all 0.5s;
+  transition: all 0.2s;
   :hover {
-    margin-right: 5px;
-    transform: scale(1.2, 1.2);
+    margin-right: 15px;
 
-    font-weight: bold;
+    font-weight: 500;
     color: #fff;
   }
 `;

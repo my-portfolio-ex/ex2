@@ -5,6 +5,7 @@ import * as S from './styled';
 import { useScrollFadeIn, useSeo } from '@/hooks';
 
 import { MouseDown } from '@components/MouseDown';
+import { DateComponent } from '@components/Date';
 
 export const ProjectPage: React.FC = () => {
   const lawAnimation = {
@@ -90,6 +91,40 @@ export const ProjectPage: React.FC = () => {
       scrollNum: 4,
     },
   ];
+  const gcArr = [
+    {
+      FeatTitle: '메인 화면',
+      Responsive: 'https://i.ibb.co/K92bKR5/image.png',
+    },
+    {
+      FeatTitle: '미션 화면',
+      Responsive: 'https://i.ibb.co/WV172fT/image.png',
+      Responsive2: 'https://i.ibb.co/9pVztmh/image.png',
+    },
+    {
+      FeatTitle: '분리배출 인증화면',
+      Responsive: 'https://i.ibb.co/S0fsThx/image.png',
+    },
+    {
+      FeatTitle: '분리배출 인증확인 화면',
+      Responsive: 'https://i.ibb.co/PjRqG3m/image.png',
+      Responsive2: 'https://i.ibb.co/BTw96Mr/image.png',
+    },
+    {
+      FeatTitle: '캐시기부 화면',
+      Responsive: 'https://i.ibb.co/vh1GNps/image.png',
+      Responsive2: 'https://i.ibb.co/1QkGhyX/image.png',
+    },
+    {
+      FeatTitle: '캠페인 화면',
+      Responsive: 'https://i.ibb.co/61yz50j/image.png',
+    },
+    {
+      FeatTitle: 'Fqa화면',
+      Responsive: 'https://i.ibb.co/m0FqgV7/image.png',
+      Responsive2: 'https://i.ibb.co/vw2v4NG/image.png',
+    },
+  ];
   const spArr = [
     {
       FeatTitle: '메인화면',
@@ -161,6 +196,43 @@ export const ProjectPage: React.FC = () => {
       scrollNum: 20,
     },
   ];
+  const langArr = [
+    {
+      FeatTitle: '메인화면',
+      ImgSrcDesk: 'https://i.ibb.co/fpmQbLH/image.png',
+      Responsive: 'https://i.ibb.co/xLfhswB/image.png',
+    },
+    {
+      FeatTitle: '로그인',
+      ImgSrcDesk: 'https://i.ibb.co/tJmQRjW/image.png',
+      Responsive: 'https://i.ibb.co/xSxrVpZ/image.png',
+    },
+    {
+      FeatTitle: '회원가입',
+      ImgSrcDesk: 'https://i.ibb.co/2ZDNRsp/image.png',
+      Responsive: 'https://i.ibb.co/SQBPJMj/image.png',
+    },
+    {
+      FeatTitle: '단어 맞추기',
+      ImgSrcDesk: 'https://i.ibb.co/k4YL35r/image.png',
+      Responsive: 'https://i.ibb.co/GpCQF8L/image.png',
+    },
+    {
+      FeatTitle: '문장 맞추기',
+      ImgSrcDesk: 'https://i.ibb.co/SNS5yW0/image.png',
+      Responsive: 'https://i.ibb.co/wdchhWN/image.png',
+    },
+    {
+      FeatTitle: '영작하기',
+      ImgSrcDesk: 'https://i.ibb.co/5R6F31J/image.png',
+      Responsive: 'https://i.ibb.co/H7hmVpq/image.png',
+    },
+    {
+      FeatTitle: '문제가 없을 때',
+      ImgSrcDesk: 'https://i.ibb.co/DVw4qJW/image.png',
+      Responsive: 'https://i.ibb.co/T2v1Bnb/image.png',
+    },
+  ];
   const spInfoArr = [
     {
       infoTitle: 'github_frontend',
@@ -185,6 +257,26 @@ export const ProjectPage: React.FC = () => {
       scrollNum: 1,
     },
   ];
+  const ltInfoArr = [
+    {
+      infoTitle: 'github_frontend',
+      href: 'https://github.com/SimpleLearnEnglish/Langtudy-frontend',
+    },
+    {
+      infoTitle: 'dev url',
+      href: 'https://langtudy.vercel.app/',
+    },
+  ];
+  const gcInfoArr = [
+    {
+      infoTitle: 'github_frontend',
+      href: 'https://github.com/GreenCash-dev/greencash_frontend',
+    },
+    {
+      infoTitle: 'dev url',
+      href: 'https://greencash.vercel.app/',
+    },
+  ];
   const [g, setG] = useState([
     {
       id: '#sp',
@@ -197,6 +289,10 @@ export const ProjectPage: React.FC = () => {
     {
       id: '#langtudy',
       title: 'langtudy',
+    },
+    {
+      id: '#greencash',
+      title: 'greencash',
     },
   ]);
   //스타일 따로 지정하는법
@@ -211,28 +307,22 @@ export const ProjectPage: React.FC = () => {
                   key={idx}
                   style={{
                     display: 'flex',
-                    flexDirection: 'column',
+                    margin: 'auto',
                   }}
                 >
-                  <div
-                    style={{
-                      display: 'flex',
-                    }}
+                  <S.gotoHoverText
+                    onMouseOver={() => setBlur(true)}
+                    onMouseLeave={() => setBlur(false)}
+                    href={cTitle.id}
                   >
-                    <S.gotoHoverText
-                      onMouseOver={() => setBlur(true)}
-                      onMouseLeave={() => setBlur(false)}
-                      href={cTitle.id}
-                    >
-                      {cTitle.title}
-                    </S.gotoHoverText>
-                    <S.gotoButton
-                      data-info={JSON.stringify(g)}
-                      onMouseOver={handleMouseOver}
-                      onMouseLeave={() => setBlur(false)}
-                      href={cTitle.id}
-                    ></S.gotoButton>
-                  </div>
+                    {cTitle.title}
+                  </S.gotoHoverText>
+                  <S.gotoButton
+                    data-info={JSON.stringify(g)}
+                    onMouseOver={handleMouseOver}
+                    onMouseLeave={() => setBlur(false)}
+                    href={cTitle.id}
+                  ></S.gotoButton>
                 </div>
               );
             })}
@@ -252,13 +342,7 @@ export const ProjectPage: React.FC = () => {
         </S.ProjectDataSection>
         <S.ProjectDataSection blurBoolean={blur}>
           <S.ProjectDate {...scrollanimation[3]}>
-            <span>2</span>
-            <span>0</span>
-            <span>2</span>
-            <span>1</span>
-            <br />
-            <span>1</span>
-            <span>2</span>
+            <DateComponent year={[2, 0, 2, 1]} day={[1, 2]} />
           </S.ProjectDate>
 
           <S.ProjectContainer widthBool={true}>
@@ -270,7 +354,6 @@ export const ProjectPage: React.FC = () => {
                   <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
                     <S.ProjectTextInDesc {...scrollanimation[7]}>
                       <S.ProjectTextInDescContainer>
-                        <S.ProjectDescHorizontal>-</S.ProjectDescHorizontal>
                         학원에 의지하며 공부하는 학생들의 자기주도학습 및 전반적인 공부시간 파악
                         프로젝트
                       </S.ProjectTextInDescContainer>
@@ -283,13 +366,12 @@ export const ProjectPage: React.FC = () => {
                   <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
                     <S.ProjectTextInDesc {...scrollanimation[8]}>
                       <S.ProjectTextInDescContainer>
-                        <S.ProjectDescHorizontal>-</S.ProjectDescHorizontal>
                         처음 시도해본 프로젝트로 많은 시간이 들었고 개발을 하면서 욕심이 생겨 여러
                         기능들을 추가하며 <br />
                         여러 hook과 typescript를 배움
                       </S.ProjectTextInDescContainer>
+                      <br />
                       <S.ProjectTextInDescContainer>
-                        <S.ProjectDescHorizontal>-</S.ProjectDescHorizontal>
                         백엔드로는 sequelize를 사용하여 쉽게 환경을 구성하고 nodejs 기반 post,
                         get구현
                       </S.ProjectTextInDescContainer>
@@ -322,7 +404,6 @@ export const ProjectPage: React.FC = () => {
                       <S.ProjectDescTexts>
                         <S.ProjectTextInDesc>
                           <S.ProjectTextInDescContainer>
-                            <S.ProjectDescHorizontal>-</S.ProjectDescHorizontal>
                             {val.FeatTitle}
                           </S.ProjectTextInDescContainer>
                         </S.ProjectTextInDesc>
@@ -371,17 +452,17 @@ export const ProjectPage: React.FC = () => {
                   <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
                     <S.ProjectTextInDesc>
                       <S.ProjectTextInDescContainer>
-                        <S.ProjectDescHorizontal>-</S.ProjectDescHorizontal>
                         처음 시작해본 프로젝트였기 때문에 알아볼 것도 많았고 부족한 점도 많았다.{' '}
-                        <br /> 하지만 버그가 생겼을 때 구글링하고 해결한 뒤 방법을 기록하게 되었다.
+                        <br /> 하지만 버그가 생겼을 때 구글링하고 질의응답 방법으로 해결함으로써
+                        문제해결 능력을 키웠다.
                       </S.ProjectTextInDescContainer>
                       <S.EmptySpace />
 
                       <S.ProjectTextInDescContainer>
-                        <S.ProjectDescHorizontal>-</S.ProjectDescHorizontal>
-                        완벽하게 구현하지 못한 management가 아쉬웠고 프로젝트 기간이 늘어가는 것을{' '}
+                        완벽하게 구현하지 못한 백오피스 페이지가 아쉬웠다.
                         <br />
-                        줄이려면 구조를 먼저 설계해야 한다고 느꼇다.
+                        프로젝트 기간이 늘어가는 것을 줄이기 위해서 구조를 먼저 만들어야 함을
+                        느꼈다.
                       </S.ProjectTextInDescContainer>
                     </S.ProjectTextInDesc>
                   </S.ProjectDescTexts>
@@ -392,11 +473,7 @@ export const ProjectPage: React.FC = () => {
         </S.ProjectDataSection>
         <S.ProjectDataSection blurBoolean={blur}>
           <S.ProjectDate>
-            2<br />0<br />2<br />
-            2
-            <br />
-            <br />
-            0<br />6
+            <DateComponent year={[2, 0, 2, 2]} day={[0, 6]} />
           </S.ProjectDate>
           <S.ProjectContainer widthBool={true}>
             <S.Section id="lawlearn">
@@ -407,7 +484,6 @@ export const ProjectPage: React.FC = () => {
                   <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
                     <S.ProjectTextInDesc {...lawAnimation[3]}>
                       <S.ProjectTextInDescContainer>
-                        <S.ProjectDescHorizontal>-</S.ProjectDescHorizontal>
                         정보화시대가 발전하면서 사이버공간에서의 모욕 및 명예훼손이 빈번해졌고
                         <br />
                         그로인해 발생하는 피해자들을 위해 도움이 되고자 함
@@ -421,7 +497,6 @@ export const ProjectPage: React.FC = () => {
                   <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
                     <S.ProjectTextInDesc {...lawAnimation[4]}>
                       <S.ProjectTextInDescContainer>
-                        <S.ProjectDescHorizontal>-</S.ProjectDescHorizontal>
                         처음 시도해본 프로젝트로 많은 시간이 들었고 개발을 하면서 욕심이 생겨 여러
                         기능들을 추가하며 <br />
                         여러 hook과 typescript를 배움
@@ -455,7 +530,6 @@ export const ProjectPage: React.FC = () => {
                       <S.ProjectDescTexts style={{ marginTop: '5rem' }}>
                         <S.ProjectTextInDesc>
                           <S.ProjectTextInDescContainer>
-                            <S.ProjectDescHorizontal>-</S.ProjectDescHorizontal>
                             {val.FeatTitle}
                           </S.ProjectTextInDescContainer>
                         </S.ProjectTextInDesc>
@@ -501,11 +575,230 @@ export const ProjectPage: React.FC = () => {
                   <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
                     <S.ProjectTextInDesc>
                       <S.ProjectTextInDescContainer>
-                        <S.ProjectDescHorizontal>-</S.ProjectDescHorizontal>
-                        LawLearn 프로젝트를 통해서 여러 인터렉션 디자인 기능을 개발하면서 <br />{' '}
-                        custom hook을 구현하였고 state를 활용하면서 관리하는 방법을 익혔다.
+                        LawLearn 프로젝트를 통해 여러 인터렉션 디자인을 개발하면서 custom hook을
+                        구현하고 state를 활용하면서 관리하는 방법을 익혔다.
                       </S.ProjectTextInDescContainer>
                       <S.EmptySpace />
+                    </S.ProjectTextInDesc>
+                  </S.ProjectDescTexts>
+                </S.ProjectFeeling>
+              </S.ProjectTextData>
+            </S.Section>
+          </S.ProjectContainer>
+        </S.ProjectDataSection>
+        <S.ProjectDataSection blurBoolean={blur}>
+          <S.ProjectDate>
+            <DateComponent year={[2, 0, 2, 3]} day={[0, 1]} />
+          </S.ProjectDate>
+          <S.ProjectContainer widthBool={true}>
+            <S.Section id="langtudy">
+              <S.ProjectTitle {...lawAnimation[0]}>📖 Langtudy</S.ProjectTitle>
+              <S.ProjectTextData>
+                <S.ProjectDesc {...lawAnimation[1]}>
+                  BACKGROUND
+                  <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
+                    <S.ProjectTextInDesc {...lawAnimation[3]}>
+                      <S.ProjectTextInDescContainer>
+                        정보화시대가 발전하면서 사이버공간에서의 모욕 및 명예훼손이 빈번해졌고
+                        <br />
+                        그로인해 발생하는 피해자들을 위해 도움이 되고자 함
+                      </S.ProjectTextInDescContainer>
+                    </S.ProjectTextInDesc>
+                  </S.ProjectDescTexts>
+                </S.ProjectDesc>
+                <S.EmptySpace />
+                <S.ProjectDesc {...lawAnimation[2]}>
+                  LEARN
+                  <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
+                    <S.ProjectTextInDesc {...lawAnimation[4]}>
+                      <S.ProjectTextInDescContainer>
+                        처음 시도해본 프로젝트로 많은 시간이 들었고 개발을 하면서 욕심이 생겨 여러
+                        기능들을 추가하며 <br />
+                        여러 hook과 typescript를 배움
+                      </S.ProjectTextInDescContainer>
+                    </S.ProjectTextInDesc>
+                  </S.ProjectDescTexts>
+                </S.ProjectDesc>
+                <S.EmptySpace />
+                <S.ProjectDesc {...infoScroll[1]}>
+                  INFO
+                  <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
+                    <S.ProjectTextInDesc>
+                      {ltInfoArr.map((infoValue, idx) => {
+                        return (
+                          <S.ProjectTextInDescContainer key={idx}>
+                            <span style={{ marginRight: '5px' }}>{infoValue.infoTitle}</span>
+                            <S.ProjectDescHorizontal>-</S.ProjectDescHorizontal>
+                            <S.aTagUrl href={infoValue.href} target="_blank" rel="noreferrer">
+                              {infoValue.href}
+                            </S.aTagUrl>
+                          </S.ProjectTextInDescContainer>
+                        );
+                      })}
+                    </S.ProjectTextInDesc>
+                  </S.ProjectDescTexts>
+                </S.ProjectDesc>
+                <S.ProjectFeatures>FEATURES</S.ProjectFeatures>
+                {langArr.map((val, idx) => {
+                  return (
+                    <div key={idx} style={{ marginTop: '5rem' }}>
+                      <S.ProjectDescTexts style={{ marginTop: '5rem' }}>
+                        <S.ProjectTextInDesc>
+                          <S.ProjectTextInDescContainer>
+                            {val.FeatTitle}
+                          </S.ProjectTextInDescContainer>
+                        </S.ProjectTextInDesc>
+                      </S.ProjectDescTexts>
+                      <S.ProjectImgContainer>
+                        {val.ImgSrcDesk ? (
+                          <S.DesktopImgContainer widthValue="80%">
+                            <S.ProjectImgDesc>데스크탑</S.ProjectImgDesc>
+                            <S.FeatureImg alt="skyplanner 프로젝트 이미지" src={val.ImgSrcDesk} />
+                          </S.DesktopImgContainer>
+                        ) : (
+                          <></>
+                        )}
+                        {val.Responsive ? (
+                          <S.ResponsiveImgContainer widthValue="18%">
+                            <S.ProjectImgDesc>모바일</S.ProjectImgDesc>
+                            <S.ResImgContainer>
+                              <S.FeatureImg src={val.Responsive} alt="모바일 버전 이미지" />
+                            </S.ResImgContainer>
+                          </S.ResponsiveImgContainer>
+                        ) : (
+                          <></>
+                        )}
+                      </S.ProjectImgContainer>
+                    </div>
+                  );
+                })}
+                <S.ProjectFeeling>
+                  느낀 점
+                  <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
+                    <S.ProjectTextInDesc>
+                      <S.ProjectTextInDescContainer>
+                        LawLearn 프로젝트를 통해 여러 인터렉션 디자인을 개발하면서 custom hook을
+                        구현하고 state를 활용하면서 관리하는 방법을 익혔다.
+                      </S.ProjectTextInDescContainer>
+                      <S.EmptySpace />
+                    </S.ProjectTextInDesc>
+                  </S.ProjectDescTexts>
+                </S.ProjectFeeling>
+              </S.ProjectTextData>
+            </S.Section>
+          </S.ProjectContainer>
+        </S.ProjectDataSection>
+        <S.ProjectDataSection blurBoolean={blur}>
+          <S.ProjectDate {...scrollanimation[3]}>
+            <DateComponent year={[2, 0, 2, 3]} day={[0, 3]} />
+          </S.ProjectDate>
+
+          <S.ProjectContainer widthBool={true}>
+            <S.Section id="greencash">
+              <S.ProjectTitle>🌳 GreenCash</S.ProjectTitle>
+              <S.ProjectTextData>
+                <S.ProjectDesc>
+                  BACKGROUND
+                  <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
+                    <S.ProjectTextInDesc>
+                      <S.ProjectTextInDescContainer>
+                        학원에 의지하며 공부하는 학생들의 자기주도학습 및 전반적인 공부시간 파악
+                        프로젝트
+                      </S.ProjectTextInDescContainer>
+                    </S.ProjectTextInDesc>
+                  </S.ProjectDescTexts>
+                </S.ProjectDesc>
+                <S.EmptySpace />
+                <S.ProjectDesc>
+                  LEARN
+                  <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
+                    <S.ProjectTextInDesc>
+                      <S.ProjectTextInDescContainer>
+                        처음 시도해본 프로젝트로 많은 시간이 들었고 개발을 하면서 욕심이 생겨 여러
+                        기능들을 추가하며 <br />
+                        여러 hook과 typescript를 배움
+                      </S.ProjectTextInDescContainer>
+                      <br />
+                      <S.ProjectTextInDescContainer>
+                        백엔드로는 sequelize를 사용하여 쉽게 환경을 구성하고 nodejs 기반 post,
+                        get구현
+                      </S.ProjectTextInDescContainer>
+                    </S.ProjectTextInDesc>
+                  </S.ProjectDescTexts>
+                </S.ProjectDesc>
+                <S.EmptySpace />
+                <S.ProjectDesc>
+                  INFO
+                  <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
+                    <S.ProjectTextInDesc>
+                      {gcInfoArr.map((infoValue, idx) => {
+                        return (
+                          <S.ProjectTextInDescContainer key={idx}>
+                            <span style={{ marginRight: '5px' }}>{infoValue.infoTitle}</span>
+                            <S.ProjectDescHorizontal>-</S.ProjectDescHorizontal>
+                            <S.aTagUrl href={infoValue.href} target="_blank" rel="noreferrer">
+                              {infoValue.href}
+                            </S.aTagUrl>
+                          </S.ProjectTextInDescContainer>
+                        );
+                      })}
+                    </S.ProjectTextInDesc>
+                  </S.ProjectDescTexts>
+                </S.ProjectDesc>
+                <S.ProjectFeatures>FEATURES</S.ProjectFeatures>
+                {gcArr.map((val, idx) => {
+                  return (
+                    <div key={idx} style={{ marginTop: '5rem' }}>
+                      <S.ProjectDescTexts>
+                        <S.ProjectTextInDesc>
+                          <S.ProjectTextInDescContainer>
+                            {val.FeatTitle}
+                          </S.ProjectTextInDescContainer>
+                        </S.ProjectTextInDesc>
+                      </S.ProjectDescTexts>
+                      <S.ProjectImgContainer>
+                        {val.Responsive ? (
+                          <S.ResponsiveImgContainer widthValue="23%">
+                            <S.ProjectImgDesc>모바일</S.ProjectImgDesc>
+                            <S.ResImgContainer>
+                              <S.FeatureImg src={val.Responsive} alt="모바일 버전 이미지" />
+                              {val.Responsive2 ? (
+                                <>
+                                  <S.FeatureImg
+                                    style={{ marginLeft: '2rem' }}
+                                    src={val.Responsive2}
+                                    alt="모바일 버전 이미지"
+                                  />
+                                </>
+                              ) : (
+                                <></>
+                              )}
+                            </S.ResImgContainer>
+                          </S.ResponsiveImgContainer>
+                        ) : (
+                          <></>
+                        )}
+                      </S.ProjectImgContainer>
+                    </div>
+                  );
+                })}
+                <S.ProjectFeeling>
+                  느낀 점
+                  <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
+                    <S.ProjectTextInDesc>
+                      <S.ProjectTextInDescContainer>
+                        처음 시작해본 프로젝트였기 때문에 알아볼 것도 많았고 부족한 점도 많았다.{' '}
+                        <br /> 하지만 버그가 생겼을 때 구글링하고 질의응답 방법으로 해결함으로써
+                        문제해결 능력을 키웠다.
+                      </S.ProjectTextInDescContainer>
+                      <S.EmptySpace />
+
+                      <S.ProjectTextInDescContainer>
+                        완벽하게 구현하지 못한 백오피스 페이지가 아쉬웠다.
+                        <br />
+                        프로젝트 기간이 늘어가는 것을 줄이기 위해서 구조를 먼저 만들어야 함을
+                        느꼈다.
+                      </S.ProjectTextInDescContainer>
                     </S.ProjectTextInDesc>
                   </S.ProjectDescTexts>
                 </S.ProjectFeeling>
