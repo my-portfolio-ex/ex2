@@ -1,7 +1,29 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as S from './styled';
+import * as SS from '../Test/styled';
 
 import { useScrollFadeIn } from '@/hooks';
+import { Global } from '@emotion/react';
+import { MyInfoComponent, PropsConsComponent } from '@/components/introduce';
+
+import MyPictureJPG from '@/assets/mypicture.jpg';
+import Lazy from '../../components/test/index';
+
+import { useToast } from '@hanseo0507/react-toast';
+
+interface InfoDataArrProps {
+  DataTitle: string;
+  DateData: string[];
+  Data: string[];
+}
+
+interface SkillArrProps {
+  SkillName: string;
+  SkillStatus: number;
+  SkillImgSrc: string;
+  RotateLevel: number;
+  borderColor: string;
+}
 
 export const IntroducePage: React.FC = () => {
   const scrollhorizontalAnimation = {
@@ -49,20 +71,106 @@ export const IntroducePage: React.FC = () => {
   const outerDivRef = useRef(null);
 
   const g = [
-    { title: '간단소개', id: '#a', animation: 0 },
-    { title: '장단점', id: '#b', animation: 1 },
-    { title: '성장과정', id: '#c', animation: 2 },
-    { title: '경험', id: '#d', animation: 3 },
-    { title: '기술', id: '#e', animation: 4 },
-    { title: '연락처', id: '#f', animation: 5 },
+    { title: '소개', id: '#myself', animation: 0 },
+    { title: '장단점', id: '#propscons', animation: 1 },
+    { title: '성장과정', id: '#growth', animation: 2 },
+    { title: '정보', id: '#info', animation: 3 },
   ];
   const [blur, setBlur] = useState(false);
   const handleMouseOver = () => {
     setBlur(true);
   };
 
+  const infoDataArr: InfoDataArrProps[] = [
+    {
+      DataTitle: '학력사항',
+      DateData: ['2020 - 2021', '2023 - 2024'],
+      Data: ['함열중학교 졸업', '한세사이버보안고등학교 입학'],
+    },
+    {
+      DataTitle: '프로젝트',
+      DateData: ['2021. 12', '2022. 06', '2023. 01', '2023. 03'],
+      Data: ['skyplanner', 'lawlearn', 'langtudy', 'greencash'],
+    },
+    {
+      DataTitle: '수상경력',
+      DateData: ['2022. 07'],
+      Data: ['교내해커톤 한세톤 대상 수상'],
+    },
+    {
+      DataTitle: 'SKILLS',
+      DateData: [],
+      Data: [],
+    },
+  ];
+  const SkillArr: SkillArrProps[] = [
+    {
+      SkillName: 'React',
+      borderColor: '#2471ff',
+      RotateLevel: 3,
+      SkillStatus: 80,
+      SkillImgSrc:
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png',
+    },
+    {
+      SkillName: 'NextJS',
+      borderColor: '#676767',
+      RotateLevel: 3,
+      SkillStatus: 70,
+      SkillImgSrc: 'https://w7.pngwing.com/pngs/87/586/png-transparent-next-js-hd-logo.png',
+    },
+    {
+      SkillName: 'JavaScript',
+      borderColor: '#e6ff00',
+      RotateLevel: 3,
+      SkillStatus: 85,
+      SkillImgSrc: 'https://t1.daumcdn.net/cfile/tistory/21221F4258E793521D',
+    },
+    {
+      SkillName: 'TypeScript',
+      borderColor: '#807eff',
+      RotateLevel: 3,
+      SkillStatus: 70,
+      SkillImgSrc:
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png',
+    },
+    {
+      SkillName: 'NodeJS',
+      borderColor: '#70ee64',
+      RotateLevel: 1,
+      SkillStatus: 60,
+      SkillImgSrc: 'https://blog.kakaocdn.net/dn/otsDC/btrczp1UIHu/KD5BDTrAsbrzswIw9lexd1/img.png',
+    },
+    {
+      SkillName: 'AWS',
+      borderColor: '#000',
+      RotateLevel: 2,
+      SkillStatus: 0,
+      SkillImgSrc: 'https://hoing.io/storage/2021/10/amazon-web-services-logo-3_750.png',
+    },
+  ];
+  const [clicked, setClicked] = useState(false);
+  const [clicked2, setClicked2] = useState(false);
+  const onClicked = () => {
+    setClicked(!clicked);
+    setClicked2(false);
+  };
+  const onClicked2 = () => {
+    setClicked2(!clicked2);
+    setClicked(false);
+  };
+  const handleCopyClipBoard = (text: string) => {
+    try {
+      navigator.clipboard.writeText(text);
+      toast.success('클립보드에 복사했어요!');
+    } catch (error) {
+      toast.error('어디선가 에러가 있어요!');
+    }
+  };
+  const { toast } = useToast();
   return (
     <S.IntroduceWrapper>
+      <Global styles={SS.styles} />
       <S.IntroducePageSection>
         <S.gotoButtonContainer>
           <S.gotoButtonDiv>
@@ -90,43 +198,66 @@ export const IntroducePage: React.FC = () => {
           </S.gotoButtonDiv>
         </S.gotoButtonContainer>
         <S.IntroduceDataSection blurBoolean={blur}>
-          <S.IntroduceContainer widthBool={true}>
+          <S.IntroduceContainer style={{ width: '85vw' }} widthBool={true}>
             <S.IntroduceIntro>
               <S.IntroduceIntroName {...introAnimation[0]}>박준희</S.IntroduceIntroName>
               <S.IntroduceIntroTitle {...introAnimation[1]}>자기소개</S.IntroduceIntroTitle>
             </S.IntroduceIntro>
           </S.IntroduceContainer>
         </S.IntroduceDataSection>
-        <S.IntroduceDataSection blurBoolean={blur} id="a">
-          <S.IntroduceContent>간단소개</S.IntroduceContent>
+        <S.IntroduceDataSection blurBoolean={blur} id="myself">
+          <S.IntroduceContent>소개</S.IntroduceContent>
           <S.IntroduceContainer widthBool={true}>
-            <S.simpleContainer>
-              <S.simpleTextContainer>
-                <S.simpleIntroduceTitle>이름:</S.simpleIntroduceTitle>
-                <S.simpleIntroduce> 박준희</S.simpleIntroduce>
-              </S.simpleTextContainer>
-              <S.simpleTextContainer>
-                <S.simpleIntroduceTitle>성별:</S.simpleIntroduceTitle>
-                <S.simpleIntroduce> 남자</S.simpleIntroduce>
-              </S.simpleTextContainer>
-              <S.simpleTextContainer>
-                <S.simpleIntroduceTitle>생년월일:</S.simpleIntroduceTitle>
-                <S.simpleIntroduce> 2005. 02. 12</S.simpleIntroduce>
-              </S.simpleTextContainer>
-              <S.simpleTextContainer>
-                <S.simpleIntroduceTitle>한 줄 소개:</S.simpleIntroduceTitle>
-                <S.simpleIntroduce>
-                  아이디어를 창출하여 소통하고 사용자 경험을 우선으로 하는 개발자
-                </S.simpleIntroduce>
-              </S.simpleTextContainer>
-            </S.simpleContainer>
+            <MyInfoComponent ImgSrc={MyPictureJPG} dataArray={infoDataArr} skillArray={SkillArr} />
           </S.IntroduceContainer>
         </S.IntroduceDataSection>
-        <S.IntroduceDataSection blurBoolean={blur} id="b">
+        <S.IntroduceDataSection blurBoolean={blur} id="propscons">
           <S.IntroduceContent>장단점</S.IntroduceContent>
-          <S.IntroduceContainer widthBool={true}></S.IntroduceContainer>
+          <S.IntroduceContainer widthBool={true}>
+            <SS.codepen flexDirectionSet="column">
+              <S.EmojiContainer>
+                <S.Emoji>😀</S.Emoji>
+                <S.EmojiText>스크롤 해주세요</S.EmojiText>
+              </S.EmojiContainer>
+              <SS.codepen flexDirectionSet="row">
+                <SS.c marginTopValue="50vw">
+                  <PropsConsComponent
+                    text="계획적으로"
+                    textDescription="할 일을 계획하여 효율적으로 끝낼 수 있다."
+                  />
+                </SS.c>
+                <SS.c marginTopValue="100vw">
+                  <PropsConsComponent
+                    text="열정적으로"
+                    textDescription="배움과 맡은 일에 열정적으로 최선을 다 한다."
+                  />
+                </SS.c>
+                <SS.c marginTopValue="150vw">
+                  <PropsConsComponent
+                    text="주도적으로"
+                    textDescription="스스로 해야 할 일을 찾고, 하고자 하는 것을 포기하지 않고 끝낸다."
+                  />
+                </SS.c>
+                <SS.c marginTopValue="200vw"></SS.c>
+              </SS.codepen>
+            </SS.codepen>
+            <SS.codepen flexDirectionSet="column">
+              <S.EmojiContainer style={{ marginTop: '10vw' }}>
+                <S.Emoji>😐</S.Emoji>
+              </S.EmojiContainer>
+              <SS.codepen flexDirectionSet="row">
+                <SS.c marginTopValue="50vw">
+                  <PropsConsComponent
+                    text="완벽하게"
+                    textDescription="완벽하게 하고자 시간을 소요할 때가 있다."
+                  />
+                </SS.c>
+                <SS.c marginTopValue="80vw"></SS.c>
+              </SS.codepen>
+            </SS.codepen>
+          </S.IntroduceContainer>
         </S.IntroduceDataSection>
-        <S.IntroduceDataSection blurBoolean={blur} id="c">
+        <S.IntroduceDataSection blurBoolean={blur} id="growth">
           <S.IntroduceContent>성장과정</S.IntroduceContent>
           <S.IntroduceContainer widthBool={true}>
             <S.SeeTip>프로젝트는 눌러서 개발중 또는 완성된 결과를 보실 수 있습니다🙂</S.SeeTip>
@@ -141,38 +272,56 @@ export const IntroducePage: React.FC = () => {
                 <S.EventBox marginValue="14.8rem" {...scrollhorizontalAnimation[4]}>
                   <S.EventBoxText>고등학교 입학</S.EventBoxText>
                 </S.EventBox>
-                <S.EventBox marginValue="10rem" {...scrollhorizontalAnimation[6]}>
+                <S.EventBox marginValue="11.5rem" {...scrollhorizontalAnimation[6]}>
                   <S.EventBoxText>네트워크 관리사 2급 취득</S.EventBoxText>
                 </S.EventBox>
                 <S.EventBox marginValue="7rem" {...scrollhorizontalAnimation[8]}>
-                  <S.EventBoxText>skyplanner 프로젝트 시작</S.EventBoxText>
+                  <S.EventBoxA
+                    onClick={() => alert('skyplanner는 프로젝트 페이지에서 확인해주세요!') as any}
+                  >
+                    skyplanner 프로젝트 시작
+                  </S.EventBoxA>
                 </S.EventBox>
-                <S.EventBox marginValue="2rem" {...scrollhorizontalAnimation[10]}>
+                <S.EventBox marginValue="2.5rem" {...scrollhorizontalAnimation[10]}>
                   <S.EventBoxText>ITQ엑셀 A등급 취득</S.EventBoxText>
                 </S.EventBox>
-                <S.EventBox marginValue="2rem" {...scrollhorizontalAnimation[12]}>
+                <S.EventBox marginValue="2.5rem" {...scrollhorizontalAnimation[12]}>
                   <S.EventBoxText>리눅스마스터 2급 취득</S.EventBoxText>
                 </S.EventBox>
                 <S.EventBox marginValue="20rem" {...scrollhorizontalAnimation[14]}>
-                  <S.EventBoxText>LawLearn 프로젝트 시작</S.EventBoxText>
+                  <S.EventBoxA href="https://lawlearn.site" target="_blank">
+                    LawLearn 프로젝트 시작
+                  </S.EventBoxA>
                 </S.EventBox>
-                <S.EventBox marginValue="1rem" {...scrollhorizontalAnimation[16]}>
+                <S.EventBox marginValue="1.7rem" {...scrollhorizontalAnimation[16]}>
                   <S.EventBoxText>교내해커톤 1위수상</S.EventBoxText>
                 </S.EventBox>
                 <S.EventBox marginValue="1rem" {...scrollhorizontalAnimation[18]}>
-                  <S.EventBoxText>skyplanner 완성</S.EventBoxText>
+                  <S.EventBoxA
+                    onClick={() => alert('skyplanner는 프로젝트 페이지에서 확인해주세요!') as any}
+                  >
+                    skyplanner 완성
+                  </S.EventBoxA>
                 </S.EventBox>
-                <S.EventBox marginValue="6.8rem" {...scrollhorizontalAnimation[20]}>
-                  <S.EventBoxText>LawLearn 완성 및 배포 || Langtudy 프로젝트 시작</S.EventBoxText>
+                <S.EventBox marginValue="7.5rem" {...scrollhorizontalAnimation[20]}>
+                  <S.EventBoxA
+                    onClick={() => alert('langtudy로 이동합니다')}
+                    href="https://langtudy.vercel.app"
+                    target="_blank"
+                  >
+                    LawLearn 완성 및 배포 || Langtudy 프로젝트 시작
+                  </S.EventBoxA>
                 </S.EventBox>
-                <S.EventBox marginValue="4rem" {...scrollhorizontalAnimation[22]}>
-                  <S.EventBoxText>GreenCash 프로젝트 시작</S.EventBoxText>
+                <S.EventBox marginValue="5.2rem" {...scrollhorizontalAnimation[22]}>
+                  <S.EventBoxA href="https://greencash.vercel.app" target="_blank">
+                    GreenCash 프로젝트 시작
+                  </S.EventBoxA>
                 </S.EventBox>
               </S.EventBoxContainer>
               <S.horizontalLine>
                 <S.horizontalPoint eachLeft="89px" />
                 <S.horizontalPoint eachLeft="8.5%" />
-                <S.horizontalPoint eachLeft="18.6%" />
+                <S.horizontalPoint eachLeft="18.2%" />
                 <S.horizontalPoint eachLeft="27%" />
                 <S.horizontalPoint eachLeft="35.4%" />
                 <S.horizontalPoint eachLeft="41.3%" />
@@ -188,57 +337,83 @@ export const IntroducePage: React.FC = () => {
                 <S.EventBoxDate marginValue="" {...scrollhorizontalAnimation[2]}>
                   2019.03.14
                 </S.EventBoxDate>
-                <S.EventBoxDate marginValue="11.3rem" {...scrollhorizontalAnimation[3]}>
+                <S.EventBoxDate marginValue="11.5rem" {...scrollhorizontalAnimation[3]}>
                   2019.07.18
                 </S.EventBoxDate>
-                <S.EventBoxDate marginValue="20.8rem" {...scrollhorizontalAnimation[5]}>
+                <S.EventBoxDate marginValue="20.2rem" {...scrollhorizontalAnimation[5]}>
                   2021.03.02
                 </S.EventBoxDate>
-                <S.EventBoxDate marginValue="16.3rem" {...scrollhorizontalAnimation[7]}>
+                <S.EventBoxDate marginValue="17.7rem" {...scrollhorizontalAnimation[7]}>
                   2021.08.17
                 </S.EventBoxDate>
                 <S.EventBoxDate marginValue="17.2rem" {...scrollhorizontalAnimation[9]}>
                   2021.12
                 </S.EventBoxDate>
-                <S.EventBoxDate marginValue="11rem" {...scrollhorizontalAnimation[11]}>
+                <S.EventBoxDate marginValue="11.5rem" {...scrollhorizontalAnimation[11]}>
                   2021.12.02
                 </S.EventBoxDate>
-                <S.EventBoxDate marginValue="9.6rem" {...scrollhorizontalAnimation[13]}>
+                <S.EventBoxDate marginValue="10rem" {...scrollhorizontalAnimation[13]}>
                   2021.12.31
                 </S.EventBoxDate>
-                <S.EventBoxDate marginValue="29rem" {...scrollhorizontalAnimation[15]}>
+                <S.EventBoxDate marginValue="29.3rem" {...scrollhorizontalAnimation[15]}>
                   2022.06
                 </S.EventBoxDate>
-                <S.EventBoxDate marginValue="9.5rem" {...scrollhorizontalAnimation[17]}>
+                <S.EventBoxDate marginValue="9.7rem" {...scrollhorizontalAnimation[17]}>
                   2022.07.21
                 </S.EventBoxDate>
                 <S.EventBoxDate marginValue="7.4rem" {...scrollhorizontalAnimation[19]}>
                   2022.08
                 </S.EventBoxDate>
-                <S.EventBoxDate marginValue="15rem" {...scrollhorizontalAnimation[21]}>
+                <S.EventBoxDate marginValue="15.3rem" {...scrollhorizontalAnimation[21]}>
                   2022.12
                 </S.EventBoxDate>
-                <S.EventBoxDate marginValue="9.7rem" {...scrollhorizontalAnimation[23]}>
+                <S.EventBoxDate marginValue="10rem" {...scrollhorizontalAnimation[23]}>
                   2023.01
                 </S.EventBoxDate>
-                <S.EventBoxDate marginValue="15rem" {...scrollhorizontalAnimation[24]}>
+                <S.EventBoxDate marginValue="15.2rem" {...scrollhorizontalAnimation[24]}>
                   2023.03
                 </S.EventBoxDate>
               </S.EventBoxDateContainer>
             </S.growupPre>
           </S.IntroduceContainer>
         </S.IntroduceDataSection>
-        <S.IntroduceDataSection blurBoolean={blur} id="d">
-          <S.IntroduceContent>경험</S.IntroduceContent>
-          <S.IntroduceContainer widthBool={true}></S.IntroduceContainer>
-        </S.IntroduceDataSection>
-        <S.IntroduceDataSection blurBoolean={blur} id="e">
-          <S.IntroduceContent>기술</S.IntroduceContent>
-          <S.IntroduceContainer widthBool={true}></S.IntroduceContainer>
-        </S.IntroduceDataSection>
-        <S.IntroduceDataSection blurBoolean={blur} id="f">
-          <S.IntroduceContent>연락처</S.IntroduceContent>
-          <S.IntroduceContainer widthBool={true}></S.IntroduceContainer>
+        <S.IntroduceDataSection blurBoolean={blur} id="info">
+          <S.IntroduceContent>정보</S.IntroduceContent>
+          <S.IntroduceContainer widthBool={true}>
+            <S.InfoContainer>
+              <S.UseTip>눌러서 확인해보세요!</S.UseTip>
+              <S.TopMenu>
+                <S.InfoGithub ClickBool={clicked} onClick={onClicked}>
+                  <S.InfoName ClickBool={clicked}>github</S.InfoName>
+                </S.InfoGithub>
+                <S.InfoMail ClickBool={clicked2} onClick={onClicked2}>
+                  <S.InfoName2 ClickBool={clicked2}>메일</S.InfoName2>
+                </S.InfoMail>
+              </S.TopMenu>
+              <S.BottomMenu>
+                {clicked ? (
+                  <>
+                    <S.EmailTip>클릭해서 이동</S.EmailTip>
+                    <S.GithubScreen href="https://github.com/alpha0212" target="_blank">
+                      <Lazy alt="my github" src="https://i.ibb.co/TwcVy3M/image.png" />
+                    </S.GithubScreen>
+                  </>
+                ) : (
+                  <></>
+                )}
+                {clicked2 ? (
+                  <>
+                    <S.EmailTip>클릭해서 복사</S.EmailTip>
+                    <S.EmailClipBoard onClick={() => handleCopyClipBoard('alpha_owo@naver.com')}>
+                      <S.Email>alpha_owo@naver.com</S.Email>
+                    </S.EmailClipBoard>
+                  </>
+                ) : (
+                  <></>
+                )}
+              </S.BottomMenu>
+            </S.InfoContainer>
+          </S.IntroduceContainer>
         </S.IntroduceDataSection>
       </S.IntroducePageSection>
     </S.IntroduceWrapper>
