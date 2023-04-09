@@ -91,6 +91,7 @@ export const IntroduceDataSection = styled.section<{ blurBoolean: boolean }>`
 export const IntroduceContainer = styled.div<{ widthBool: boolean }>`
   width: 75vw;
   height: ${(props) => (props.widthBool ? '100vh' : '200vh')};
+  overflow-y: auto;
 
   margin: auto;
   display: flex;
@@ -142,7 +143,7 @@ export const IntroduceContent = styled.h2`
   text-align: center;
   position: absolute;
   top: 48.4%;
-  right: 6.5%;
+  right: 5.3%;
 `;
 
 export const simpleContainer = styled.div`
@@ -223,6 +224,16 @@ export const EventBoxText = styled.strong`
   text-align: center;
   color: #e0e0e0;
   margin: auto 10px auto 10px;
+`;
+
+export const EventBoxA = styled.a`
+  font-size: 20px;
+  font-weight: 300;
+  text-align: center;
+  color: #e0e0e0;
+  margin: auto 10px auto 10px;
+  text-decoration: none;
+  cursor: pointer;
 `;
 
 export const EventBoxDateContainer = styled.div`
@@ -309,4 +320,126 @@ export const gotoHoverTextContainer = styled.div`
   width: 100%;
 
   display: flex;
+`;
+
+export const EmojiContainer = styled.div`
+  position: sticky;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  height: 100px;
+  top: calc(10%);
+`;
+
+export const Emoji = styled.h1`
+  width: 100%;
+
+  text-align: center;
+`;
+export const EmojiText = styled.strong`
+  font-size: 15px;
+  font-weight: 400;
+  text-align: center;
+
+  margin-top: 20px;
+`;
+
+export const InfoContainer = styled.section`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+`;
+export const UseTip = styled.strong`
+  text-align: center;
+  font-size: 15px;
+  font-weight: 500;
+  color: #000;
+
+  margin-top: 7%;
+`;
+export const TopMenu = styled.div`
+  display: flex;
+  margin: 7% auto auto auto;
+  & > * {
+    display: flex;
+    margin: 0 10px 0 10px;
+    cursor: pointer;
+  }
+`;
+export const InfoGithub = styled.div<{ ClickBool: boolean }>`
+  width: 150px;
+  height: 60px;
+
+  ${(props) => (props.ClickBool ? 'background-color: #000' : 'background-color: #fff')};
+  :hover {
+    background-color: #000;
+    & > * {
+      color: #fff;
+    }
+  }
+  transition: all 0.2s;
+
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+`;
+export const InfoName = styled.div<{ ClickBool: boolean }>`
+  ${(props) => (props.ClickBool ? 'color: #fff' : 'color: #000')};
+  font-size: 18px;
+  font-weight: 500;
+  margin: auto;
+`;
+export const InfoName2 = styled.div<{ ClickBool: boolean }>`
+  ${(props) => (props.ClickBool ? 'color: #fff' : 'color: #000')};
+  font-size: 18px;
+  font-weight: 500;
+  margin: auto;
+`;
+export const InfoMail = styled.div<{ ClickBool: boolean }>`
+  width: 150px;
+  height: 60px;
+
+  ${(props) => (props.ClickBool ? 'background-color: #61e759' : 'background-color: #fff')};
+  :hover {
+    background-color: #61e759;
+    & > * {
+      color: #fff;
+    }
+  }
+  transition: all 0.2s;
+
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+`;
+
+export const BottomMenu = styled.div`
+  display: flex;
+  & > * {
+    margin: auto;
+  }
+  transition: all 0.5s;
+  flex-direction: column;
+`;
+export const GithubScreen = styled.a``;
+export const GithubScreenImg = styled.img``;
+
+export const EmailClipBoard = styled.div`
+  width: 200px;
+  height: 50px;
+  display: flex;
+
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+`;
+export const Email = styled.div`
+  color: #000;
+  font-weight: bold;
+  margin: auto;
+`;
+export const EmailTip = styled.div`
+  color: #000;
+  margin: 10% auto 1% auto;
 `;
