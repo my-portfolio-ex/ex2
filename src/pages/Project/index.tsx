@@ -16,7 +16,7 @@ export const ProjectPage: React.FC = () => {
     3: useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.9),
     4: useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.8),
   };
-  const scrollanimation = {
+  const scrollanimation: any = {
     0: useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.5),
     1: useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.7),
     2: useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.9),
@@ -126,7 +126,16 @@ export const ProjectPage: React.FC = () => {
       Responsive2: 'https://i.ibb.co/vw2v4NG/image.png',
     },
   ];
-  const spArr = [
+  interface spArrProps {
+    FeatTitle: string;
+    ImgSrcDesk?: string;
+    Responsive: string;
+    Responsive2: string;
+    Responsive3: string;
+
+    scrollNum: number;
+  }
+  const spArr: spArrProps[] = [
     {
       FeatTitle: '메인화면',
       ImgSrcDesk: 'https://i.ibb.co/Sddg95V/image.png',
