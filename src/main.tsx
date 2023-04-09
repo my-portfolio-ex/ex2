@@ -5,11 +5,15 @@ import { App } from './App';
 import { Global } from '@emotion/react';
 import { globalStyle } from './styles/global';
 
+import { ToastProvider, ToastPosition } from '@hanseo0507/react-toast';
+
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
-      <Global styles={globalStyle} />
-      <App />
+      <ToastProvider position={ToastPosition.bottomCenter} duration={2500}>
+        <Global styles={globalStyle} />
+        <App />
+      </ToastProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
