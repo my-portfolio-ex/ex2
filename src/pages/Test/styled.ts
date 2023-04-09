@@ -8,8 +8,6 @@ export const styles = css`
     height: 100px;
     display: inline-flex;
     align-items: center;
-    mix-blend-mode: overlay;
-    font-family: 'Fredoka One', sans-serif;
     margin-left: 2px;
     margin-right: 2px;
     font-size: 120px;
@@ -24,12 +22,14 @@ export const innerWrapper = styled.section`
   overflow-x: hidden;
 `;
 
-export const codepen = styled.div`
+export const codepen = styled.div<{ flexDirectionSet: string }>`
   display: flex;
+  flex-direction: ${(props) => props.flexDirectionSet};
   font-size: 60px;
   align-items: flex-start;
   color: #000;
   justify-content: center;
+  margin: auto;
 `;
 
 export const c = styled.span<{ marginTopValue: string }>`

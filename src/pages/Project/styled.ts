@@ -208,6 +208,7 @@ export const ProjectFeatures = styled.h2`
 
 export const FeatureImg = styled.img`
   width: 100%;
+  height: 100%;
 
   border-radius: 10px;
 `;
@@ -224,7 +225,6 @@ export const DesktopImgContainer = styled.div<{ widthValue: string }>`
 export const ResponsiveImgContainer = styled.div<{ widthValue: string }>`
   width: ${(props) => props.widthValue};
   margin-left: 2%;
-  margin-top: 2%;
 `;
 
 export const ResImgContainer = styled.div`

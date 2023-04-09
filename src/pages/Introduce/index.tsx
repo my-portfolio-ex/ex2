@@ -84,7 +84,7 @@ export const IntroducePage: React.FC = () => {
   const infoDataArr: InfoDataArrProps[] = [
     {
       DataTitle: '학력사항',
-      DateData: ['2020 - 2021', '2023 - 2024'],
+      DateData: ['2018 - 2020', '2021 ~'],
       Data: ['함열중학교 졸업', '한세사이버보안고등학교 입학'],
     },
     {

@@ -645,6 +645,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@hanseo0507/react-toast@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "@hanseo0507/react-toast@npm:1.0.1"
+  peerDependencies:
+    "@emotion/react": ">=11"
+    "@emotion/styled": ">=11"
+    framer-motion: 9.x
+    react: ">=17"
+    react-dom: ">=17"
+  checksum: 72bce3682f3752c0092dee3a8d55d7e3288a14250e759bba88a2c9a60d5c812a15474379a022eab217981e090e74b2a8b2928a006da0b78c8b0b22ddf0d82ac2
+  languageName: node
+  linkType: hard
+
 "@humanwhocodes/config-array@npm:^0.11.8":
   version: 0.11.8
   resolution: "@humanwhocodes/config-array@npm:0.11.8"
@@ -2648,9 +2661,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"framer-motion@npm:^10.8.4":
-  version: 10.8.4
-  resolution: "framer-motion@npm:10.8.4"
+"framer-motion@npm:^10.11.2":
+  version: 10.11.2
+  resolution: "framer-motion@npm:10.11.2"
   dependencies:
     "@emotion/is-prop-valid": ^0.8.2
     tslib: ^2.4.0
@@ -2665,7 +2678,7 @@ __metadata:
       optional: true
     react-dom:
       optional: true
-  checksum: 08e89025e766278c2ee1dd60c8978a16d03c9cc95169c15b8b10b0f0b0b2fa3ef458e67726aa5153178934bdfd00fcd2f019b579274a6b853449ba21234a4300
+  checksum: 7444d145dd6317172b047a9904227e6f515978060b19949a67c74d40b2ead7c2191a6899ab534845f0b33b7b36cb08bd2a1e28697c57242ec2b686ff02512830
   languageName: node
   linkType: hard
 
@@ -5165,6 +5178,7 @@ __metadata:
     "@babel/preset-typescript": ^7.21.0
     "@emotion/react": ^11.10.6
     "@emotion/styled": ^11.10.6
+    "@hanseo0507/react-toast": ^1.0.1
     "@testing-library/jest-dom": ^5.16.5
     "@testing-library/react": ^14.0.0
     "@types/jest": ^29.4.1
@@ -5184,7 +5198,7 @@ __metadata:
     eslint-plugin-prettier: ^4.2.1
     eslint-plugin-react: ^7.32.2
     eslint-plugin-react-hooks: ^4.6.0
-    framer-motion: ^10.8.4
+    framer-motion: ^10.11.2
     husky: ^8.0.3
     lint-staged: ^13.2.0
     prettier: ^2.8.4
