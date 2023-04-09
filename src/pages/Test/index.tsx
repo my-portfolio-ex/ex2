@@ -7,7 +7,7 @@ export const Test: React.FC = () => {
   return (
     <>
       <Global styles={styles} />
-      <S.codepen>
+      <S.codepen flexDirectionSet="">
         <S.c marginTopValue="0">C</S.c>
         <S.c marginTopValue="50vw">O</S.c>
         <S.c marginTopValue="150vw">D</S.c>
