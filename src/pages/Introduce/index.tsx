@@ -183,7 +183,7 @@ export const IntroducePage: React.FC = () => {
                     onMouseLeave={() => setBlur(false)}
                     href={cTitle.id}
                   ></S.gotoButton>
-                  <div {...contentAnimation[cTitle.animation]}>
+                  <div {...useScrollFadeIn<HTMLHeadingElement>('left', 1, 0.5)}>
                     <S.gotoHoverText
                       onMouseOver={() => setBlur(true)}
                       onMouseLeave={() => setBlur(false)}
