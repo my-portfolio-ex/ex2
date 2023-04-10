@@ -223,7 +223,7 @@ export const IntroducePage: React.FC = () => {
                 <SS.c marginTopValue="50vw">
                   <PropsConsComponent
                     text="계획적으로"
-                    textDescription="할 일을 계획하여 효율적으로 끝낼 수 있다."
+                    textDescription="할 일을 시간단위로 계획하여 효율적으로 끝낼 수 있다."
                   />
                 </SS.c>
                 <SS.c marginTopValue="100vw">
@@ -249,7 +249,7 @@ export const IntroducePage: React.FC = () => {
                 <SS.c marginTopValue="50vw">
                   <PropsConsComponent
                     text="완벽하게"
-                    textDescription="완벽하게 하고자 시간을 소요할 때가 있다."
+                    textDescription="하고자 하는 일을 완벽하게 끝내려고 많은 시간을 소요할 때가 있다."
                   />
                 </SS.c>
                 <SS.c marginTopValue="80vw"></SS.c>
