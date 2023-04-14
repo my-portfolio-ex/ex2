@@ -174,7 +174,7 @@ export const ProjectTextInDesc = styled.div`
 export const ProjectTextInDescContainer = styled.div`
   display: flex;
   line-height: 1.35em;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.5px;
 
   font-size: 17px;
 `;

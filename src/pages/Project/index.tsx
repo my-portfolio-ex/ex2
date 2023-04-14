@@ -424,6 +424,17 @@ export const ProjectPage: React.FC = () => {
                   </S.ProjectDescTexts>
                 </S.ProjectDesc>
                 <S.EmptySpace />
+                <S.ProjectDesc {...useScrollFadeIn('up', 1, 0.5)}>
+                  사용 기술
+                  <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
+                    <S.ProjectTextInDesc {...useScrollFadeIn('up', 1, 0.7)}>
+                      <S.ProjectTextInDescContainer>
+                        React.js, Javascript, Typescript, Sequelize, express.js, Styled-component
+                      </S.ProjectTextInDescContainer>
+                    </S.ProjectTextInDesc>
+                  </S.ProjectDescTexts>
+                </S.ProjectDesc>
+                <S.EmptySpace />
                 <S.ProjectDesc {...infoScroll[0]}>
                   INFO
                   <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
@@ -565,6 +576,18 @@ export const ProjectPage: React.FC = () => {
                     </S.ProjectTextInDesc>
                   </S.ProjectDescTexts>
                 </S.ProjectDesc>
+                <S.EmptySpace />
+                <S.ProjectDesc {...useScrollFadeIn('up', 1, 0.5)}>
+                  사용 기술
+                  <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
+                    <S.ProjectTextInDesc {...useScrollFadeIn('up', 1, 0.7)}>
+                      <S.ProjectTextInDescContainer>
+                        React.js, emotion styled-component, Typescript, JavaScript,
+                      </S.ProjectTextInDescContainer>
+                    </S.ProjectTextInDesc>
+                  </S.ProjectDescTexts>
+                </S.ProjectDesc>
+                <S.EmptySpace />
                 <S.ProjectFeatures>FEATURES</S.ProjectFeatures>
                 {lawArr.map((val, idx) => {
                   return (
@@ -688,6 +711,17 @@ export const ProjectPage: React.FC = () => {
                           </S.ProjectTextInDescContainer>
                         );
                       })}
+                    </S.ProjectTextInDesc>
+                  </S.ProjectDescTexts>
+                </S.ProjectDesc>
+                <S.EmptySpace />
+                <S.ProjectDesc {...useScrollFadeIn('up', 1, 0.5)}>
+                  사용 기술
+                  <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
+                    <S.ProjectTextInDesc {...useScrollFadeIn('up', 1, 0.7)}>
+                      <S.ProjectTextInDescContainer>
+                        Next.js, Emotion styled-component, TypeScript, Firebase
+                      </S.ProjectTextInDescContainer>
                     </S.ProjectTextInDesc>
                   </S.ProjectDescTexts>
                 </S.ProjectDesc>
@@ -820,6 +854,17 @@ export const ProjectPage: React.FC = () => {
                           </S.ProjectTextInDescContainer>
                         );
                       })}
+                    </S.ProjectTextInDesc>
+                  </S.ProjectDescTexts>
+                </S.ProjectDesc>
+                <S.EmptySpace />
+                <S.ProjectDesc {...useScrollFadeIn('up', 1, 0.5)}>
+                  사용 기술
+                  <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
+                    <S.ProjectTextInDesc {...useScrollFadeIn('up', 1, 0.7)}>
+                      <S.ProjectTextInDescContainer>
+                        React.js, emotion styled-component, Typescript, Recoil, Django
+                      </S.ProjectTextInDescContainer>
                     </S.ProjectTextInDesc>
                   </S.ProjectDescTexts>
                 </S.ProjectDesc>
