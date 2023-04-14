@@ -506,7 +506,7 @@ export const ProjectPage: React.FC = () => {
                         {val.ImgSrcDesk ? (
                           <S.DesktopImgContainer widthValue="80%">
                             <S.ProjectImgDesc>데스크탑</S.ProjectImgDesc>
-                            <Lazy alt="skyplanner 이미지" src={val.ImgSrcDesk} />
+                            <S.FeatureImg alt="langtudy 프로젝트 이미지" src={val.ImgSrcDesk} />
                           </S.DesktopImgContainer>
                         ) : (
                           <></>
@@ -515,12 +515,22 @@ export const ProjectPage: React.FC = () => {
                           <S.ResponsiveImgContainer widthValue="18%">
                             <S.ProjectImgDesc>모바일</S.ProjectImgDesc>
                             <S.ResImgContainer>
-                              <Lazy src={val.Responsive} alt="모바일 버전 이미지" />
+                              <S.FeatureImg src={val.Responsive} alt="모바일 버전 이미지" />
                               {val.Responsive2 || val.Responsive3 ? (
                                 <>
-                                  <Lazy src={val.Responsive2} alt="모바일 버전 이미지" />
+                                  <div style={{ margin: '0 20px 0 20px' }}></div>
+                                  <S.FeatureImg
+                                    style={{ marginLeft: '2rem' }}
+                                    src={val.Responsive2}
+                                    alt="모바일 버전 이미지"
+                                  />
+                                  <div style={{ margin: '0 20px 0 20px' }}></div>
 
-                                  <Lazy src={val.Responsive3} alt="모바일 버전 이미지" />
+                                  <S.FeatureImg
+                                    style={{ marginLeft: '2rem' }}
+                                    src={val.Responsive3}
+                                    alt="모바일 버전 이미지"
+                                  />
                                 </>
                               ) : (
                                 <></>
