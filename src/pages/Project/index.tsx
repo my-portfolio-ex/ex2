@@ -590,6 +590,16 @@ export const ProjectPage: React.FC = () => {
                   </S.ProjectDescTexts>
                 </S.ProjectDesc>
                 <S.EmptySpace />
+                <S.ProjectDesc {...useScrollFadeIn('up', 1, 0.5)}>
+                  사용 기술
+                  <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
+                    <S.ProjectTextInDesc {...useScrollFadeIn('up', 1, 0.7)}>
+                      <S.ProjectTextInDescContainer>
+                        React.js, emotion styled-component, Typescript, JavaScript,
+                      </S.ProjectTextInDescContainer>
+                    </S.ProjectTextInDesc>
+                  </S.ProjectDescTexts>
+                </S.ProjectDesc>
                 <S.ProjectDesc {...infoScroll[1]}>
                   INFO
                   <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
@@ -608,17 +618,6 @@ export const ProjectPage: React.FC = () => {
                           </S.ProjectTextInDescContainer>
                         );
                       })}
-                    </S.ProjectTextInDesc>
-                  </S.ProjectDescTexts>
-                </S.ProjectDesc>
-                <S.EmptySpace />
-                <S.ProjectDesc {...useScrollFadeIn('up', 1, 0.5)}>
-                  사용 기술
-                  <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
-                    <S.ProjectTextInDesc {...useScrollFadeIn('up', 1, 0.7)}>
-                      <S.ProjectTextInDescContainer>
-                        React.js, emotion styled-component, Typescript, JavaScript,
-                      </S.ProjectTextInDescContainer>
                     </S.ProjectTextInDesc>
                   </S.ProjectDescTexts>
                 </S.ProjectDesc>
@@ -728,6 +727,17 @@ export const ProjectPage: React.FC = () => {
                   </S.ProjectDescTexts>
                 </S.ProjectDesc>
                 <S.EmptySpace />
+                <S.ProjectDesc {...useScrollFadeIn('up', 1, 0.5)}>
+                  사용 기술
+                  <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
+                    <S.ProjectTextInDesc {...useScrollFadeIn('up', 1, 0.7)}>
+                      <S.ProjectTextInDescContainer>
+                        Next.js, Emotion styled-component, TypeScript, Firebase
+                      </S.ProjectTextInDescContainer>
+                    </S.ProjectTextInDesc>
+                  </S.ProjectDescTexts>
+                </S.ProjectDesc>
+                <S.EmptySpace />
                 <S.ProjectDesc {...useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.5)}>
                   INFO
                   <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
@@ -750,16 +760,6 @@ export const ProjectPage: React.FC = () => {
                   </S.ProjectDescTexts>
                 </S.ProjectDesc>
                 <S.EmptySpace />
-                <S.ProjectDesc {...useScrollFadeIn('up', 1, 0.5)}>
-                  사용 기술
-                  <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
-                    <S.ProjectTextInDesc {...useScrollFadeIn('up', 1, 0.7)}>
-                      <S.ProjectTextInDescContainer>
-                        Next.js, Emotion styled-component, TypeScript, Firebase
-                      </S.ProjectTextInDescContainer>
-                    </S.ProjectTextInDesc>
-                  </S.ProjectDescTexts>
-                </S.ProjectDesc>
                 <S.ProjectFeatures>FEATURES</S.ProjectFeatures>
                 {langArr.map((val, idx) => {
                   return (
@@ -871,6 +871,17 @@ export const ProjectPage: React.FC = () => {
                   </S.ProjectDescTexts>
                 </S.ProjectDesc>
                 <S.EmptySpace />
+                <S.ProjectDesc {...useScrollFadeIn('up', 1, 0.5)}>
+                  사용 기술
+                  <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
+                    <S.ProjectTextInDesc {...useScrollFadeIn('up', 1, 0.7)}>
+                      <S.ProjectTextInDescContainer>
+                        React.js, emotion styled-component, Typescript, Recoil, Django
+                      </S.ProjectTextInDescContainer>
+                    </S.ProjectTextInDesc>
+                  </S.ProjectDescTexts>
+                </S.ProjectDesc>
+                <S.EmptySpace />
                 <S.ProjectDesc {...useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.5)}>
                   INFO
                   <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
@@ -893,16 +904,6 @@ export const ProjectPage: React.FC = () => {
                   </S.ProjectDescTexts>
                 </S.ProjectDesc>
                 <S.EmptySpace />
-                <S.ProjectDesc {...useScrollFadeIn('up', 1, 0.5)}>
-                  사용 기술
-                  <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
-                    <S.ProjectTextInDesc {...useScrollFadeIn('up', 1, 0.7)}>
-                      <S.ProjectTextInDescContainer>
-                        React.js, emotion styled-component, Typescript, Recoil, Django
-                      </S.ProjectTextInDescContainer>
-                    </S.ProjectTextInDesc>
-                  </S.ProjectDescTexts>
-                </S.ProjectDesc>
                 <S.ProjectFeatures {...useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.5)}>
                   FEATURES
                 </S.ProjectFeatures>
