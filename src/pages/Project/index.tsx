@@ -979,7 +979,7 @@ export const ProjectPage: React.FC = () => {
         </S.ProjectDataSection>
         <S.ProjectDataSection blurBoolean={blur}>
           <S.ProjectDate {...useScrollFadeIn<HTMLHeadingElement>('left', 1, 0.3)}>
-            <DateComponent year={[2, 0, 2, 3]} day={[0, 3]} />
+            <DateComponent year={[2, 0, 2, 3]} day={[0, 4]} />
           </S.ProjectDate>
 
           <S.ProjectContainer widthBool={true}>
