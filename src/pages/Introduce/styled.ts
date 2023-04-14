@@ -178,10 +178,7 @@ export const simpleIntroduce = styled.strong`
 export const growupPre = styled.div`
   width: 85%;
   overflow-x: auto;
-  ::-webkit-scrollbar {
-    display: none;
-  }
-
+  overflow-y: hidden;
   display: flex;
   flex-direction: column;
   margin: auto;
