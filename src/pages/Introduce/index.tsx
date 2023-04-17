@@ -89,8 +89,8 @@ export const IntroducePage: React.FC = () => {
     },
     {
       DataTitle: '프로젝트',
-      DateData: ['2021. 12', '2022. 06', '2023. 01', '2023. 03'],
-      Data: ['skyplanner', 'lawlearn', 'langtudy', 'greencash'],
+      DateData: ['2021. 12', '2022. 06', '2023. 01', '2023. 03', '2023. 04'],
+      Data: ['Skyplanner', 'LawLearn', 'Langtudy', 'GreenCash', 'InvQ'],
     },
     {
       DataTitle: '수상경력',
