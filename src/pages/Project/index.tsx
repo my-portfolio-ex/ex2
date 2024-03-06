@@ -6,7 +6,6 @@ import { useScrollFadeIn, useSeo } from '@/hooks';
 
 import { MouseDown } from '@components/MouseDown';
 import { DateComponent } from '@components/Date';
-import Lazy from '@components/test';
 
 export const ProjectPage: React.FC = () => {
   const lawAnimation = {
@@ -318,7 +317,7 @@ export const ProjectPage: React.FC = () => {
     },
     {
       infoTitle: 'release url',
-      href: 'https://www.lawlearn.site/',
+      href: 'https://law-project.vercel.app/',
       scrollNum: 1,
     },
   ];
@@ -355,24 +354,12 @@ export const ProjectPage: React.FC = () => {
 
   const [g, setG] = useState([
     {
-      id: '#sp',
-      title: 'skyplanner',
-    },
-    {
       id: '#lawlearn',
       title: 'lawlearn',
     },
     {
-      id: '#langtudy',
-      title: 'langtudy',
-    },
-    {
       id: '#greencash',
       title: 'greencash',
-    },
-    {
-      id: '#invQ',
-      title: 'invQ',
     },
   ]);
   //스타일 따로 지정하는법
@@ -418,154 +405,6 @@ export const ProjectPage: React.FC = () => {
             <S.MouseDownPosition {...mouseAnimation[0]}>
               <MouseDown />
             </S.MouseDownPosition>
-          </S.ProjectContainer>
-        </S.ProjectDataSection>
-        <S.ProjectDataSection blurBoolean={blur}>
-          <S.ProjectDate {...scrollanimation[3]}>
-            <DateComponent year={[2, 0, 2, 1]} day={[1, 2]} />
-          </S.ProjectDate>
-
-          <S.ProjectContainer widthBool={true}>
-            <S.Section id="sp">
-              <S.ProjectTitle {...scrollanimation[4]}>☁ SKYPLANNER</S.ProjectTitle>
-              <S.ProjectTextData>
-                <S.ProjectDesc {...scrollanimation[5]}>
-                  BACKGROUND
-                  <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
-                    <S.ProjectTextInDesc {...scrollanimation[7]}>
-                      <S.ProjectTextInDescContainer>
-                        학원에 의지하며 공부하는 학생들의 자기주도학습 및 전반적인 공부시간 파악
-                        프로젝트
-                      </S.ProjectTextInDescContainer>
-                    </S.ProjectTextInDesc>
-                  </S.ProjectDescTexts>
-                </S.ProjectDesc>
-                <S.EmptySpace />
-                <S.ProjectDesc {...scrollanimation[6]}>
-                  LEARN
-                  <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
-                    <S.ProjectTextInDesc {...scrollanimation[8]}>
-                      <S.ProjectTextInDescContainer>
-                        처음 시도해본 프로젝트로 많은 시간이 들었고 개발을 하면서 욕심이 생겨 여러
-                        기능들을 추가하며 <br />
-                        여러 hook과 typescript를 배움
-                      </S.ProjectTextInDescContainer>
-                      <br />
-                      <S.ProjectTextInDescContainer>
-                        백엔드로는 sequelize를 사용하여 쉽게 환경을 구성하고 nodejs 기반 post,
-                        get구현
-                      </S.ProjectTextInDescContainer>
-                    </S.ProjectTextInDesc>
-                  </S.ProjectDescTexts>
-                </S.ProjectDesc>
-                <S.EmptySpace />
-                <S.ProjectDesc {...useScrollFadeIn('up', 1, 0.5)}>
-                  사용 기술
-                  <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
-                    <S.ProjectTextInDesc {...useScrollFadeIn('up', 1, 0.7)}>
-                      <S.ProjectTextInDescContainer>
-                        React.js, Javascript, Typescript, Sequelize, express.js, Styled-component
-                      </S.ProjectTextInDescContainer>
-                    </S.ProjectTextInDesc>
-                  </S.ProjectDescTexts>
-                </S.ProjectDesc>
-                <S.EmptySpace />
-                <S.ProjectDesc {...infoScroll[0]}>
-                  INFO
-                  <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
-                    <S.ProjectTextInDesc>
-                      {spInfoArr.map((infoValue, idx) => {
-                        return (
-                          <S.ProjectTextInDescContainer
-                            {...useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.3)}
-                            key={idx}
-                          >
-                            <span style={{ marginRight: '5px' }}>{infoValue.infoTitle}</span>
-                            <S.ProjectDescHorizontal>-</S.ProjectDescHorizontal>
-                            <S.aTagUrl href={infoValue.href} target="_blank" rel="noreferrer">
-                              {infoValue.href}
-                            </S.aTagUrl>
-                          </S.ProjectTextInDescContainer>
-                        );
-                      })}
-                    </S.ProjectTextInDesc>
-                  </S.ProjectDescTexts>
-                </S.ProjectDesc>
-                <S.ProjectFeatures>FEATURES</S.ProjectFeatures>
-                {spArr.map((val, idx) => {
-                  return (
-                    <div key={idx} style={{ marginTop: '5rem' }}>
-                      <S.ProjectDescTexts>
-                        <S.ProjectTextInDesc>
-                          <S.ProjectTextInDescContainer>
-                            {val.FeatTitle}
-                          </S.ProjectTextInDescContainer>
-                        </S.ProjectTextInDesc>
-                      </S.ProjectDescTexts>
-                      <S.ProjectImgContainer {...scrollanimation[val.scrollNum]}>
-                        {val.ImgSrcDesk ? (
-                          <S.DesktopImgContainer widthValue="80%">
-                            <S.ProjectImgDesc>데스크탑</S.ProjectImgDesc>
-                            <S.FeatureImg alt="langtudy 프로젝트 이미지" src={val.ImgSrcDesk} />
-                          </S.DesktopImgContainer>
-                        ) : (
-                          <></>
-                        )}
-                        {val.Responsive ? (
-                          <S.ResponsiveImgContainer widthValue="18%">
-                            <S.ProjectImgDesc>모바일</S.ProjectImgDesc>
-                            <S.ResImgContainer>
-                              <S.FeatureImg src={val.Responsive} alt="모바일 버전 이미지" />
-                              {val.Responsive2 || val.Responsive3 ? (
-                                <>
-                                  <div style={{ margin: '0 20px 0 20px' }}></div>
-                                  <S.FeatureImg
-                                    style={{ marginLeft: '2rem' }}
-                                    src={val.Responsive2}
-                                    alt="모바일 버전 이미지"
-                                  />
-                                  <div style={{ margin: '0 20px 0 20px' }}></div>
-
-                                  <S.FeatureImg
-                                    style={{ marginLeft: '2rem' }}
-                                    src={val.Responsive3}
-                                    alt="모바일 버전 이미지"
-                                  />
-                                </>
-                              ) : (
-                                <></>
-                              )}
-                            </S.ResImgContainer>
-                          </S.ResponsiveImgContainer>
-                        ) : (
-                          <></>
-                        )}
-                      </S.ProjectImgContainer>
-                    </div>
-                  );
-                })}
-                <S.ProjectFeeling>
-                  느낀 점
-                  <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
-                    <S.ProjectTextInDesc>
-                      <S.ProjectTextInDescContainer>
-                        처음 시작해본 프로젝트였기 때문에 알아볼 것도 많았고 부족한 점도 많았다.{' '}
-                        <br /> 하지만 버그가 생겼을 때 구글링하고 질의응답 방법으로 해결함으로써
-                        문제해결 능력을 키웠다.
-                      </S.ProjectTextInDescContainer>
-                      <S.EmptySpace />
-
-                      <S.ProjectTextInDescContainer>
-                        완벽하게 구현하지 못한 백오피스 페이지가 아쉬웠다.
-                        <br />
-                        프로젝트 기간이 늘어가는 것을 줄이기 위해서 구조를 먼저 만들어야 함을
-                        느꼈다.
-                      </S.ProjectTextInDescContainer>
-                    </S.ProjectTextInDesc>
-                  </S.ProjectDescTexts>
-                </S.ProjectFeeling>
-              </S.ProjectTextData>
-            </S.Section>
           </S.ProjectContainer>
         </S.ProjectDataSection>
         <S.ProjectDataSection blurBoolean={blur}>
@@ -701,134 +540,7 @@ export const ProjectPage: React.FC = () => {
             </S.Section>
           </S.ProjectContainer>
         </S.ProjectDataSection>
-        <S.ProjectDataSection blurBoolean={blur}>
-          <S.ProjectDate {...useScrollFadeIn<HTMLHeadingElement>('left', 1, 0.3)}>
-            <DateComponent year={[2, 0, 2, 3]} day={[0, 1]} />
-          </S.ProjectDate>
-          <S.ProjectContainer widthBool={true}>
-            <S.Section id="langtudy">
-              <S.ProjectTitle>📖 Langtudy</S.ProjectTitle>
-              <S.ProjectTextData>
-                <S.ProjectDesc {...useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.5)}>
-                  BACKGROUND
-                  <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
-                    <S.ProjectTextInDesc>
-                      <S.ProjectTextInDescContainer
-                        {...useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.8)}
-                      >
-                        영어 공부 및 학교의 시험 단어를 암기하기 위한 서비스 프로젝트
-                      </S.ProjectTextInDescContainer>
-                    </S.ProjectTextInDesc>
-                  </S.ProjectDescTexts>
-                </S.ProjectDesc>
-                <S.EmptySpace />
-                <S.ProjectDesc {...useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.5)}>
-                  LEARN
-                  <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
-                    <S.ProjectTextInDesc>
-                      <S.ProjectTextInDescContainer
-                        {...useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.8)}
-                      >
-                        NextJS 프레임워크를 사용하여 api를 불러오고 데이터를 적용하는 과정을 공부함.
-                        <br />
-                        소셜로그인과 비밀번호 초기화 기능 구현 with Firebase
-                      </S.ProjectTextInDescContainer>
-                    </S.ProjectTextInDesc>
-                  </S.ProjectDescTexts>
-                </S.ProjectDesc>
-                <S.EmptySpace />
-                <S.ProjectDesc {...useScrollFadeIn('up', 1, 0.5)}>
-                  사용 기술
-                  <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
-                    <S.ProjectTextInDesc {...useScrollFadeIn('up', 1, 0.7)}>
-                      <S.ProjectTextInDescContainer>
-                        Next.js, Emotion styled-component, TypeScript, Firebase
-                      </S.ProjectTextInDescContainer>
-                    </S.ProjectTextInDesc>
-                  </S.ProjectDescTexts>
-                </S.ProjectDesc>
-                <S.EmptySpace />
-                <S.ProjectDesc {...useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.5)}>
-                  INFO
-                  <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
-                    <S.ProjectTextInDesc>
-                      {ltInfoArr.map((infoValue, idx) => {
-                        return (
-                          <S.ProjectTextInDescContainer
-                            {...useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.3)}
-                            key={idx}
-                          >
-                            <span style={{ marginRight: '5px' }}>{infoValue.infoTitle}</span>
-                            <S.ProjectDescHorizontal>-</S.ProjectDescHorizontal>
-                            <S.aTagUrl href={infoValue.href} target="_blank" rel="noreferrer">
-                              {infoValue.href}
-                            </S.aTagUrl>
-                          </S.ProjectTextInDescContainer>
-                        );
-                      })}
-                    </S.ProjectTextInDesc>
-                  </S.ProjectDescTexts>
-                </S.ProjectDesc>
-                <S.EmptySpace />
-                <S.ProjectFeatures>FEATURES</S.ProjectFeatures>
-                {langArr.map((val, idx) => {
-                  return (
-                    <div key={idx} style={{ marginTop: '5rem' }}>
-                      <S.ProjectDescTexts style={{ marginTop: '5rem' }}>
-                        <S.ProjectTextInDesc>
-                          <S.ProjectTextInDescContainer>
-                            {val.FeatTitle}
-                          </S.ProjectTextInDescContainer>
-                        </S.ProjectTextInDesc>
-                      </S.ProjectDescTexts>
-                      <S.ProjectImgContainer>
-                        {val.ImgSrcDesk ? (
-                          <S.DesktopImgContainer
-                            {...useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.5)}
-                            widthValue="80%"
-                          >
-                            <S.ProjectImgDesc>데스크탑</S.ProjectImgDesc>
-                            <S.FeatureImg alt="langtudy 프로젝트 이미지" src={val.ImgSrcDesk} />
-                          </S.DesktopImgContainer>
-                        ) : (
-                          <></>
-                        )}
-                        {val.Responsive ? (
-                          <S.ResponsiveImgContainer
-                            {...useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.5)}
-                            widthValue="18%"
-                          >
-                            <S.ProjectImgDesc>모바일</S.ProjectImgDesc>
-                            <S.ResImgContainer>
-                              <S.FeatureImg src={val.Responsive} alt="모바일 버전 이미지" />
-                            </S.ResImgContainer>
-                          </S.ResponsiveImgContainer>
-                        ) : (
-                          <></>
-                        )}
-                      </S.ProjectImgContainer>
-                    </div>
-                  );
-                })}
-                <S.ProjectFeeling>
-                  느낀 점
-                  <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
-                    <S.ProjectTextInDesc>
-                      <S.ProjectTextInDescContainer>
-                        React를 사용할 줄 아니까 NextJS가 비교적 쉽게 느껴졌다.
-                        <br />
-                        api를 불러오고 데이터를 적용하는 과정에서 성능 향상하는 방법을 공부했다.
-                        <br />
-                        REST API의 이해도를 높히고 api를 구현하는 기초적인 방법을 공부했다.
-                      </S.ProjectTextInDescContainer>
-                      <S.EmptySpace />
-                    </S.ProjectTextInDesc>
-                  </S.ProjectDescTexts>
-                </S.ProjectFeeling>
-              </S.ProjectTextData>
-            </S.Section>
-          </S.ProjectContainer>
-        </S.ProjectDataSection>
+
         <S.ProjectDataSection blurBoolean={blur}>
           <S.ProjectDate {...useScrollFadeIn<HTMLHeadingElement>('left', 1, 0.3)}>
             <DateComponent year={[2, 0, 2, 3]} day={[0, 3]} />
@@ -969,158 +681,6 @@ export const ProjectPage: React.FC = () => {
                         <br />
                         문제가 있어도 해결방법을 찾아서 해결하여 새로운 지식을 얻게 되는 것이
                         좋았다.
-                      </S.ProjectTextInDescContainer>
-                    </S.ProjectTextInDesc>
-                  </S.ProjectDescTexts>
-                </S.ProjectFeeling>
-              </S.ProjectTextData>
-            </S.Section>
-          </S.ProjectContainer>
-        </S.ProjectDataSection>
-        <S.ProjectDataSection blurBoolean={blur}>
-          <S.ProjectDate {...useScrollFadeIn<HTMLHeadingElement>('left', 1, 0.3)}>
-            <DateComponent year={[2, 0, 2, 3]} day={[0, 4]} />
-          </S.ProjectDate>
-
-          <S.ProjectContainer widthBool={true}>
-            <S.Section id="invQ">
-              <S.ProjectTitle {...useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.5)}>
-                📱 InvQ
-              </S.ProjectTitle>
-              <S.ProjectTextData>
-                <S.ProjectDesc {...useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.5)}>
-                  BACKGROUND
-                  <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
-                    <S.ProjectTextInDesc>
-                      <S.ProjectTextInDescContainer
-                        {...useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.8)}
-                      >
-                        취업 준비를 하면서 프론트엔드 면접 질문을 대비하고자 만든 프로젝트 및 서비스
-                      </S.ProjectTextInDescContainer>
-                    </S.ProjectTextInDesc>
-                  </S.ProjectDescTexts>
-                </S.ProjectDesc>
-                <S.EmptySpace />
-                <S.ProjectDesc {...useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.5)}>
-                  LEARN
-                  <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
-                    <S.ProjectTextInDesc>
-                      <S.ProjectTextInDescContainer
-                        {...useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.8)}
-                      >
-                        파일 구조 설계 및 기한관리를 할 수 있게 되었음.
-                        <br />
-                        간소화와 성능 끌어올리는 코드 작성법을 알게됨.
-                      </S.ProjectTextInDescContainer>
-                      <br />
-                      <S.ProjectTextInDescContainer
-                        {...useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.8)}
-                      >
-                        Firebase CRUD 방법을 익혔음. Create, Read, Update, Delete
-                      </S.ProjectTextInDescContainer>
-                    </S.ProjectTextInDesc>
-                  </S.ProjectDescTexts>
-                </S.ProjectDesc>
-                <S.EmptySpace />
-                <S.ProjectDesc {...useScrollFadeIn('up', 1, 0.5)}>
-                  사용 기술
-                  <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
-                    <S.ProjectTextInDesc {...useScrollFadeIn('up', 1, 0.7)}>
-                      <S.ProjectTextInDescContainer>
-                        React.js, emotion styled-component, Typescript, Firebase, Vite
-                      </S.ProjectTextInDescContainer>
-                    </S.ProjectTextInDesc>
-                  </S.ProjectDescTexts>
-                </S.ProjectDesc>
-                <S.ProjectDesc {...useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.5)}>
-                  INFO
-                  <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
-                    <S.ProjectTextInDesc>
-                      {invQInfoArr.map((infoValue, idx) => {
-                        return (
-                          <S.ProjectTextInDescContainer
-                            {...useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.3)}
-                            key={idx}
-                          >
-                            <span style={{ marginRight: '5px' }}>{infoValue.infoTitle}</span>
-                            <S.ProjectDescHorizontal>-</S.ProjectDescHorizontal>
-                            <S.aTagUrl href={infoValue.href} target="_blank" rel="noreferrer">
-                              {infoValue.href}
-                            </S.aTagUrl>
-                          </S.ProjectTextInDescContainer>
-                        );
-                      })}
-                    </S.ProjectTextInDesc>
-                  </S.ProjectDescTexts>
-                </S.ProjectDesc>
-                <S.EmptySpace />
-
-                <S.ProjectFeatures {...useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.5)}>
-                  FEATURES
-                </S.ProjectFeatures>
-                {InvArr.map((val, idx) => {
-                  return (
-                    <div key={idx} style={{ marginTop: '5rem' }}>
-                      <S.ProjectDescTexts>
-                        <S.ProjectTextInDesc>
-                          <S.ProjectTextInDescContainer>
-                            {val.FeatTitle}
-                          </S.ProjectTextInDescContainer>
-                        </S.ProjectTextInDesc>
-                      </S.ProjectDescTexts>
-                      <S.ProjectImgContainer>
-                        {val.Responsive ? (
-                          <S.ResponsiveImgContainer
-                            {...useScrollFadeIn<HTMLHeadingElement>('up', 1, 0.5)}
-                            widthValue="23%"
-                          >
-                            <S.ProjectImgDesc>모바일</S.ProjectImgDesc>
-                            <S.ResImgContainer>
-                              <S.FeatureImg src={val.Responsive} alt="모바일 버전 이미지" />
-                              {val.Responsive2 ? (
-                                <>
-                                  <S.FeatureImg
-                                    style={{ marginLeft: '2rem' }}
-                                    src={val.Responsive2}
-                                    alt="모바일 버전 이미지"
-                                  />
-                                </>
-                              ) : (
-                                <></>
-                              )}
-                              {val.Responsive3 ? (
-                                <S.FeatureImg
-                                  style={{ marginLeft: '2rem' }}
-                                  src={val.Responsive3}
-                                  alt="모바일 버전 이미지"
-                                />
-                              ) : (
-                                <></>
-                              )}
-                            </S.ResImgContainer>
-                          </S.ResponsiveImgContainer>
-                        ) : (
-                          <></>
-                        )}
-                      </S.ProjectImgContainer>
-                    </div>
-                  );
-                })}
-                <S.ProjectFeeling>
-                  느낀 점
-                  <S.ProjectDescTexts style={{ marginTop: '0.5rem' }}>
-                    <S.ProjectTextInDesc>
-                      <S.ProjectTextInDescContainer>
-                        status를 사용하여 실시간 데이터를 다루고 firebase의 전체적인 CRUD 흐름을
-                        익혔음.
-                        <br />
-                      </S.ProjectTextInDescContainer>
-                      <S.ProjectTextInDescContainer>
-                        이번 프로젝트로 skyplanner를 개발할 때 보다 코딩 실력이 많이 늘었다는 것을
-                        느꼈음.
-                        <br />
-                        개발하면서 너무 즐거웠고 에러가 나고 이를 해결하는 과정조차 재밌게 코딩을
-                        즐겼다.
                       </S.ProjectTextInDescContainer>
                     </S.ProjectTextInDesc>
                   </S.ProjectDescTexts>

@@ -42,7 +42,7 @@ export const MyInfoComponent: React.FC<Props> = ({ ImgSrc, dataArray, skillArray
               src="https://play-lh.googleusercontent.com/PCpXdqvUWfCW1mXhH1Y_98yBpgsWxuTSTofy3NGMo9yBTATDyzVkqU580bfSln50bFU"
             />
           </S.MyInfoButton>
-          <S.MyInfoButton href="http://localhost:3000/project">
+          <S.MyInfoButton href="/project">
             <S.MyInfoButtonText>프로젝트</S.MyInfoButtonText>
           </S.MyInfoButton>
         </S.MyInfoButtonContainer>

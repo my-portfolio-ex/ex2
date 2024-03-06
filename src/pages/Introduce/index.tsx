@@ -52,6 +52,8 @@ export const IntroducePage: React.FC = () => {
     22: useScrollFadeIn<HTMLHeadingElement>('left', 1, 0.5),
     23: useScrollFadeIn<HTMLHeadingElement>('left', 1, 0.5),
     24: useScrollFadeIn<HTMLHeadingElement>('left', 1, 0.5),
+    25: useScrollFadeIn<HTMLHeadingElement>('left', 1, 0.5),
+    26: useScrollFadeIn<HTMLHeadingElement>('left', 1, 0.5),
   };
 
   const introAnimation = {
@@ -84,16 +86,21 @@ export const IntroducePage: React.FC = () => {
   const infoDataArr: InfoDataArrProps[] = [
     {
       DataTitle: '학력사항',
-      DateData: ['2018 - 2020', '2021 ~'],
-      Data: ['함열중학교 졸업', '한세사이버보안고등학교 입학'],
+      DateData: ['2021 ~ 2023'],
+      Data: ['한세사이버보안고등학교 졸업'],
+    },
+    {
+      DataTitle: '경력',
+      DateData: ['2023. 11 ~ '],
+      Data: ['모요에서 재직중'],
     },
     {
       DataTitle: '프로젝트',
-      DateData: ['2021. 12', '2022. 06', '2023. 01', '2023. 03', '2023. 04'],
-      Data: ['Skyplanner', 'LawLearn', 'Langtudy', 'GreenCash', 'InvQ'],
+      DateData: ['2022. 06', '2023. 03'],
+      Data: ['LawLearn', 'GreenCash'],
     },
     {
-      DataTitle: '수상경력',
+      DataTitle: '수상',
       DateData: ['2022. 07'],
       Data: ['교내해커톤 한세톤 대상 수상'],
     },
@@ -133,13 +140,6 @@ export const IntroducePage: React.FC = () => {
       SkillStatus: 70,
       SkillImgSrc:
         'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png',
-    },
-    {
-      SkillName: 'NodeJS',
-      borderColor: '#70ee64',
-      RotateLevel: 1,
-      SkillStatus: 60,
-      SkillImgSrc: 'https://blog.kakaocdn.net/dn/otsDC/btrczp1UIHu/KD5BDTrAsbrzswIw9lexd1/img.png',
     },
     {
       SkillName: 'AWS',
@@ -275,20 +275,13 @@ export const IntroducePage: React.FC = () => {
                 <S.EventBox marginValue="11.5rem" {...scrollhorizontalAnimation[6]}>
                   <S.EventBoxText>네트워크 관리사 2급 취득</S.EventBoxText>
                 </S.EventBox>
-                <S.EventBox marginValue="7rem" {...scrollhorizontalAnimation[8]}>
-                  <S.EventBoxA
-                    onClick={() => alert('skyplanner는 프로젝트 페이지에서 확인해주세요!') as any}
-                  >
-                    skyplanner 프로젝트 시작
-                  </S.EventBoxA>
-                </S.EventBox>
                 <S.EventBox marginValue="2.5rem" {...scrollhorizontalAnimation[10]}>
                   <S.EventBoxText>ITQ엑셀 A등급 취득</S.EventBoxText>
                 </S.EventBox>
                 <S.EventBox marginValue="2.5rem" {...scrollhorizontalAnimation[12]}>
                   <S.EventBoxText>리눅스마스터 2급 취득</S.EventBoxText>
                 </S.EventBox>
-                <S.EventBox marginValue="20rem" {...scrollhorizontalAnimation[14]}>
+                <S.EventBox marginValue="7.3rem" {...scrollhorizontalAnimation[14]}>
                   <S.EventBoxA href="https://lawlearn.site" target="_blank">
                     LawLearn 프로젝트 시작
                   </S.EventBoxA>
@@ -296,13 +289,7 @@ export const IntroducePage: React.FC = () => {
                 <S.EventBox marginValue="1.7rem" {...scrollhorizontalAnimation[16]}>
                   <S.EventBoxText>교내해커톤 1위수상</S.EventBoxText>
                 </S.EventBox>
-                <S.EventBox marginValue="1rem" {...scrollhorizontalAnimation[18]}>
-                  <S.EventBoxA
-                    onClick={() => alert('skyplanner는 프로젝트 페이지에서 확인해주세요!') as any}
-                  >
-                    skyplanner 완성
-                  </S.EventBoxA>
-                </S.EventBox>
+
                 <S.EventBox marginValue="7.5rem" {...scrollhorizontalAnimation[20]}>
                   <S.EventBoxA
                     onClick={() => alert('langtudy로 이동합니다')}
@@ -317,21 +304,25 @@ export const IntroducePage: React.FC = () => {
                     GreenCash 프로젝트 시작
                   </S.EventBoxA>
                 </S.EventBox>
+                <S.EventBox marginValue="17.2rem" {...scrollhorizontalAnimation[25]}>
+                  <S.EventBoxA href="https://moyoplan.com" target="_blank">
+                    모요 입사
+                  </S.EventBoxA>
+                </S.EventBox>
               </S.EventBoxContainer>
               <S.horizontalLine>
                 <S.horizontalPoint eachLeft="89px" />
                 <S.horizontalPoint eachLeft="8.5%" />
                 <S.horizontalPoint eachLeft="18.2%" />
                 <S.horizontalPoint eachLeft="27%" />
-                <S.horizontalPoint eachLeft="35.4%" />
-                <S.horizontalPoint eachLeft="41.3%" />
+                <S.horizontalPoint eachLeft="33.4%" />
+                <S.horizontalPoint eachLeft="38.8%" />
                 <S.horizontalPoint eachLeft="46.9%" />
-                <S.horizontalPoint eachLeft="60.2%" />
-                <S.horizontalPoint eachLeft="65.6%" />
-                <S.horizontalPoint eachLeft="70.1%" />
-                <S.horizontalPoint eachLeft="77.5%" />
-                <S.horizontalPoint eachLeft="82.7%" />
-                <S.horizontalPoint eachLeft="90.1%" />
+                <S.horizontalPoint eachLeft="52.4%" />
+                <S.horizontalPoint eachLeft="59.8%" />
+                <S.horizontalPoint eachLeft="65.2%" />
+                <S.horizontalPoint eachLeft="72.6%" />
+                <S.horizontalPoint eachLeft="83.6%" />
               </S.horizontalLine>
               <S.EventBoxDateContainer>
                 <S.EventBoxDate marginValue="" {...scrollhorizontalAnimation[2]}>
@@ -346,24 +337,20 @@ export const IntroducePage: React.FC = () => {
                 <S.EventBoxDate marginValue="17.7rem" {...scrollhorizontalAnimation[7]}>
                   2021.08.17
                 </S.EventBoxDate>
-                <S.EventBoxDate marginValue="17.2rem" {...scrollhorizontalAnimation[9]}>
-                  2021.12
-                </S.EventBoxDate>
+
                 <S.EventBoxDate marginValue="11.5rem" {...scrollhorizontalAnimation[11]}>
                   2021.12.02
                 </S.EventBoxDate>
                 <S.EventBoxDate marginValue="10rem" {...scrollhorizontalAnimation[13]}>
                   2021.12.31
                 </S.EventBoxDate>
-                <S.EventBoxDate marginValue="29.3rem" {...scrollhorizontalAnimation[15]}>
+                <S.EventBoxDate marginValue="16.3rem" {...scrollhorizontalAnimation[15]}>
                   2022.06
                 </S.EventBoxDate>
                 <S.EventBoxDate marginValue="9.7rem" {...scrollhorizontalAnimation[17]}>
                   2022.07.21
                 </S.EventBoxDate>
-                <S.EventBoxDate marginValue="7.4rem" {...scrollhorizontalAnimation[19]}>
-                  2022.08
-                </S.EventBoxDate>
+
                 <S.EventBoxDate marginValue="15.3rem" {...scrollhorizontalAnimation[21]}>
                   2022.12
                 </S.EventBoxDate>
@@ -372,6 +359,9 @@ export const IntroducePage: React.FC = () => {
                 </S.EventBoxDate>
                 <S.EventBoxDate marginValue="15.2rem" {...scrollhorizontalAnimation[24]}>
                   2023.03
+                </S.EventBoxDate>
+                <S.EventBoxDate marginValue="24.2rem" {...scrollhorizontalAnimation[26]}>
+                  2023.09
                 </S.EventBoxDate>
               </S.EventBoxDateContainer>
             </S.growupPre>
@@ -395,7 +385,7 @@ export const IntroducePage: React.FC = () => {
                   <>
                     <S.EmailTip>클릭해서 이동</S.EmailTip>
                     <S.GithubScreen href="https://github.com/alpha0212" target="_blank">
-                      <Lazy alt="my github" src="https://i.ibb.co/TwcVy3M/image.png" />
+                      <img style={{ width: "100%" }} alt="my github" src="https://i.ibb.co/TwcVy3M/image.png" />
                     </S.GithubScreen>
                   </>
                 ) : (
@@ -404,8 +394,8 @@ export const IntroducePage: React.FC = () => {
                 {clicked2 ? (
                   <>
                     <S.EmailTip>클릭해서 복사</S.EmailTip>
-                    <S.EmailClipBoard onClick={() => handleCopyClipBoard('alpha_owo@naver.com')}>
-                      <S.Email>alpha_owo@naver.com</S.Email>
+                    <S.EmailClipBoard onClick={() => handleCopyClipBoard('qkrwnsgml312@gmail.com')}>
+                      <S.Email>qkrwnsgml312@gmail.com</S.Email>
                     </S.EmailClipBoard>
                   </>
                 ) : (
